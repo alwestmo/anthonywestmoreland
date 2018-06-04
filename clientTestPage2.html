@@ -78,8 +78,10 @@
     s.parentNode.insertBefore(mp, s);
 })('fdcef96cc5c689428dee6ebbceb394a4');
 
-var Product = window.mParticle.eCommerce.createProduct('Waterslide Telebacker 2014','91823491234', 1,300,1);
-window.mParticle.eCommerce.logProductAction(,Product);
+var Product = window.mParticle.eCommerce.createProduct('Waterslide Telebacker 2014','91823491234', 1,300,1,'Waterslide','','Guitar','','',{'cookie id': '12345', 'email': 'test@gmail.com', 'model': 'Telebacker', 'product type': 'Guitar', 'categories': 'Guitar', 'shop_id': 'Atli Sigurðarson', 'condition': 'Very Good (Used)', 'color': 'Lake Placid Blue'});     
+ 
+window.mParticle.eCommerce.setCurrencyCode('USD');
+window.mParticle.eCommerce.logProductAction(window.mParticle.ProductActionType.ViewDetail,Product);
 </script>
 
 
