@@ -78,12 +78,8 @@
            		mParticle.logEvent('New Agent Registration - First Step', mParticle.EventType.Other,
                     {'Agency Phone Number':document.getElementById("phoneNumberText").value,'Agency Name':document.getElementById("agencyNameText").value, 'Owner First Name':document.getElementById("agencyFirstNameText").value, 'Owner Last Name':document.getElementById("agencyLastNameText").value, 'Agency Address 1':document.getElementById("agencyAddress1Text").value, 'Agency Country':document.getElementById("agencyCountrySelect").value, 'Agency City':document.getElementById("agencyCityText").value, 'Agency State':document.getElementById("agencyStateSelect").value, 'Agency Postal Code':document.getElementById("agencyZipCodeText").value, 'Agency Email Address':document.getElementById("agencyEmailText").value});
 		};
-	};
-	</script>
 
 	//Log New Agent Registration Second Step
-    <script>
-    	window.onload = function(){
            	document.getElementById("nextStepButton").onclick = function () { 
            		mParticle.logEvent('New Agent Registration - Second Step', mParticle.EventType.Other,
                     {'Agent First Name':document.getElementById("agentFirstNameText").value, 'Agent Last Name':document.getElementById("agentLastNameText").value, 'Agent Address 1':document.getElementById("agentAddress1Text").value, 'Agent Country':document.getElementById("agentCountrySelect").value, 'Agent City':document.getElementById("agentCityText").value, 'Agent State':document.getElementById("agentStateSelect").value, 'Agent Zip Code':document.getElementById("agentZipCodeText").value, 'Agent Direct Phone':document.getElementById("agentDirectText").value, });
