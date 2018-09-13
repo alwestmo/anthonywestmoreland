@@ -95,14 +95,6 @@
 	     	//build identity user object
 		var loginRequestUserObject = {
   			userIdentities: { email: document.getElementById("loginEmailText").value
-		},
-		function onLoginResult(result) {
-  			if (result.httpCode == 200) {
-    			var userId = result.body.mpid;
-	  		} else if (result.httpCode == -1) {
- 	 		} else if (result.httpCode == 429) {
-    		//in rare circumstances, requests will be throttled and need to be retried
-  		}
 		}
 		//call identify
 	    	window.mParticle.Identity.identify(loginRequestUserObject, onLoginResult);
