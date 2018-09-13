@@ -75,12 +75,12 @@
     //Log New Agent Registration First Page
     <script>
     	window.onload = function(){
-           mparticle.ready(
            	document.getElementById("submitNewRegistrant").onclick = function () { 
            		mParticle.logEvent('New Agent Registration - First Step', mParticle.EventType.Other,
-                    {'Agent Phone Number':document.getElementById("phoneNumberText").value,'Agency Name':document.getElementById("agencyNameText").value, 'Owner First Name':document.getElementById("agencyFirstNameText").value, 'Owner Last Name':document.getElementById("agencyLastNameText").value, 'Agency Address 1':document.getElementById("agencyAddress1Text").value, 'Agency Address 2':document.getElementById("agencyAddress2Text").value, 'Agency Country':document.getElementById("agencyCountrySelect").value, 'Agency City':document.getElementById("agencyCityText").value, 'Agency Province':document.getElementById("agencyProvinceText").value, 'Agency Postal Code':document.getElementById("agencyPostalCodeText").value, 'Agency Fax Number':document.getElementById("agencyFaxText").value, 'Agency Website':document.getElementById("agencyWebsiteText").value, 'Agency Email Address':document.getElementById("agencyEmailText").value);
-           	});
-    </script>
+                    {'Agent Phone Number':document.getElementById("phoneNumberText").value,'Agency Name':document.getElementById("agencyNameText").value, 'Owner First Name':document.getElementById("agencyFirstNameText").value, 'Owner Last Name':document.getElementById("agencyLastNameText").value, 'Agency Address 1':document.getElementById("agencyAddress1Text").value, 'Agency Address 2':document.getElementById("agencyAddress2Text").value, 'Agency Country':document.getElementById("agencyCountrySelect").value, 'Agency City':document.getElementById("agencyCityText").value, 'Agency Province':document.getElementById("agencyProvinceText").value, 'Agency Postal Code':document.getElementById("agencyPostalCodeText").value, 'Agency Fax Number':document.getElementById("agencyFaxText").value, 'Agency Website':document.getElementById("agencyWebsiteText").value, 'Agency Email Address':document.getElementById("agencyEmailText").value)});
+		});
+	};
+	</script>
 
 </head>
 
