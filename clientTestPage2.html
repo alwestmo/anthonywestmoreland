@@ -78,7 +78,7 @@
     	window.onload = function(){
            	document.getElementById("submitNewRegistrant").onclick = function () { 
            		mParticle.logEvent('New Agent Registration - First Step', mParticle.EventType.Other,
-                    {'Agent Phone Number':document.getElementById("phoneNumberText").value,'Agency Name':document.getElementById("agencyNameText").value, 'Owner First Name':document.getElementById("agencyFirstNameText").value, 'Owner Last Name':document.getElementById("agencyLastNameText").value});
+                    {'Agent Phone Number':document.getElementById("phoneNumberText").value,'Agency Name':document.getElementById("agencyNameText").value, 'Owner First Name':document.getElementById("agencyFirstNameText").value, 'Owner Last Name':document.getElementById("agencyLastNameText").value, 'Agency Address 1':document.getElementById("agencyAddress1Text").value, 'Agency Country':document.getElementById("agencyCountrySelect").value, 'Agency City':document.getElementById("agencyCityText").value, 'Agency State':document.getElementById("agencyStateSelect").value, 'Agency Postal Code':document.getElementById("agencyZipCodeText").value, 'Agency Email Address':document.getElementById("agencyEmailText").value});
 		};
 	};
 	</script>
