@@ -68,9 +68,7 @@
 
  	//Log Page View
     <script>
-    	window.onload = function(){
-		mParticle.logPageView("Page View", {'Page URL': window.document.URL});
-		};
+	mParticle.ready(mParticle.logPageView("Page View", {'Page URL': window.document.URL});)
     </script>
 
     //Log New Agent Registration First Page
