@@ -95,7 +95,7 @@
 	     	//build identity user object
 		var loginRequestUserObject = {
   			userIdentities: { email: document.getElementById("loginEmailText").value
-		}
+		},
 		function onLoginResult(result) {
   			if (result.httpCode == 200) {
     			var userId = result.body.mpid;
