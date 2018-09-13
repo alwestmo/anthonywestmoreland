@@ -88,6 +88,7 @@
 	};
 	    
 	//Create New User from Submit Button
+	    $( document ).ready(function() {
 	    document.getElementById("mP_button").onclick = function () { 
            	mParticle.logEvent('New Agent Registration - Last Step Success', mParticle.EventType.Other,
                     	{'Agent Email':document.getElementById("loginEmailText").value});
@@ -98,6 +99,7 @@
 		//call identify
 		mParticle.Identity.identify(loginRequestUserObject, onLoginResult);
 		};
+	    });
 	</script>
 </head>
 
