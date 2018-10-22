@@ -1,1 +1,2296 @@
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+    
+      <title>PokerGO</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+    
+  
+  
+  <meta name="application-name" content="PokerGO">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site/images/wintile.png">
+  <link rel="shortcut icon" href="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site/images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/base/reg_1/styles/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/base/site_4/styles/master.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/base/site_4/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/base/reg_1/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site_4/styles/master.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site_4/styles/common.css">
+  <link rel="stylesheet" type="text/css" href="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/reg_1/styles/common.css">
+  <script async="" src="https://c.friendbuy.com/site-4d84294b-www.pokergo.com/track.js?campaign_id=&amp;location=https%3A%2F%2Fwww.pokergo.com%2Fsecure%2Fsubscription%3Fsignup%3Dtrue%26sku%3DPANNUAL%26code%3D10off%26&amp;data=%7B%22site%22%3A%22site-4d84294b-www.pokergo.com%22%2C%22widgetServiceSite%22%3A%22https%3A%2F%2Fws.friendbuy.com%22%2C%22client_api_site%22%3A%22https%3A%2F%2Fc.friendbuy.com%22%2C%22campaignId%22%3A%22%22%7D&amp;_fbuy=040a02550908065219535506091905545208190805050719090551080602095203070450"></script><script async="" src="//cdn.friendbuy.com/js/friendbuy-classic.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ecommerce.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//d.impactradius-event.com/A396363-8435-4e7a-a729-9da1db1fda2b1.js"></script><script src="https://connect.facebook.net/signals/config/105467133339456?v=2.8.30&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//dnn506yrbagrg.cloudfront.net/pages/scripts/0031/4491.js?427839"></script><script type="text/javascript" async="" src="https://secure.quantserve.com/quant.js"></script><script type="text/javascript" async="" src="//static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="//bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://rules.quantcount.com/rules-p-_scvbbvKeufB3.js" async=""></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KP8RCP5"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KP8RCP5"></script><script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/require.js"></script><script async="" src="//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/scripts/common.js"></script>
+  <script src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg_1/scripts/jquery.min.js"></script>
+  
+  <script>
+    var LOC_SERVER = "https://www.pokergo.com/";
+    var LOC_SERVER_SECURE = "https://www.pokergo.com/";
+    var LOC_RESOURCE = "https://neulionms-a.akamaihd.net/mt1/player1/";
+    var LOC_CONTENT = "https://neulionsmbnyc-a.akamaihd.net/u/mt1/pokergo/thumbs/";
+    var SOLR_PROGRAM = "https://neulionsc1-a.akamaihd.net/solr/mt2_program/pokergo/";
+    var CDN_CONFIG = "https://neulionsmbnyc-a.akamaihd.net/u/mt1/pokergo/";
 
+    var locale = "";
+    
+    function toggleMenu(show)
+    {
+      var menu = document.getElementById("header_menu");
+      if(menu != null)
+      {
+        if(show == null)
+        {
+          show = (menu.style.display=="none")? true:false;
+        }
+        menu.style.display = show?"":"none";
+      }
+    }
+  </script>
+  
+    <script src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nlat.js"></script>
+    <script>
+      var accessToken = "";
+      var accessTokenServer = "https://www.pokergo.com/secure/accesstoken";
+      var nlat = new NLAccessToken(accessTokenServer, accessToken);
+    </script>
+    <script src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nlps.js"></script>
+    <script>
+      var psServer = "https://mt1api.neulion.com/personalization_mt1/v1/";
+      var ps = new Personalization(psServer);
+      var pageName = "subscription";
+    </script>
+    
+  
+  
+
+
+
+
+
+
+
+  
+    <meta name="google-site-verification" content="6SPGqpKWLAD6EAljM1CF3EmZoC1lb0bCwOb6ox-oLSo">
+    <!-- Adobe Tag Manager -->
+    <script>
+      function showAlertBar() {};
+      function updateTrialBtnText() {};
+    </script>
+    <script>
+      var SITE_ID = "pokergo";
+      var pageName = "subscription";
+      var digitalData = {page:{pageInfo:{pageName:SITE_ID+":"+pageName,language:""},category:{primaryCategory:SITE_ID,subCategory1:SITE_ID+":"+pageName,subCategory2:SITE_ID+":"+pageName}},user:{userState:"guest",memberType:""}};
+    </script>
+    <script src="//assets.adobedtm.com/ed255d28eeb9f0f573b8296f2c47c2f0a85790e2/satelliteLib-0a389c11bafaf530f473a62e337e7286c9bb3aae-staging.js"></script> 
+  
+    <!-- End Adobe Tag Manager -->
+    <!-- Optimizely -->
+    <script src="https://cdn.optimizely.com/js/8683140040.js"></script>
+    <!-- Quantcast Tag -->
+    <script type="text/javascript">
+    var _qevents = _qevents || [];
+    
+    (function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+    })();
+    
+    _qevents.push( { qacct:"p-_scvbbvKeufB3"} ); 
+    </script>
+    
+    <noscript>
+    &lt;div style="display:none;"&gt;
+    &lt;img src="//pixel.quantserve.com/pixel/p-_scvbbvKeufB3.gif" height="1" width="1" alt="Quantcast"/&gt;
+    &lt;/div&gt;
+    </noscript>
+    <!-- End Quantcast tag -->
+    
+    <!-- Friend Buy -->
+    <script>
+      var isLoggedIn = false;
+      var username = null;
+      var firstname = null;
+      var trackUsername = null;
+      if (isLoggedIn)
+      {
+        username = "";
+        firstname = "";
+        trackUsername = "";
+      }
+      var isSubscriber = false;
+      var currentSub = {
+        
+      };
+      window['friendbuy'] = window['friendbuy'] || [];
+      window['friendbuy'].push(['site', 'site-4d84294b-www.pokergo.com']);
+      if (isLoggedIn)
+      {
+        window['friendbuy'].push(['track', 'customer',
+        {
+          id: trackUsername, //INSERT CUSTOMER ID PARAMETER
+          email: username, //INSERT CUSTOMER EMAIL PARAMETER
+          first_name: firstname //INSERT CUSTOMER FIRST NAME PARAMETER
+        }
+        ]);
+      }
+      (function (f, r, n, d, b, y) {
+      b = f.createElement(r), y = f.getElementsByTagName(r)[0];b.async = 1;b.src = n;y.parentNode.insertBefore(b, y);
+      })(document, 'script', '//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js');
+    </script>
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+    <script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/scripts/util.js"></script>
+    <script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/scripts/registration.js"></script>
+    <script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/scripts/authentication.js"></script>
+    
+    <script>
+      var _registration, _auth;
+      
+      
+      
+      
+      
+      
+      
+      function init()
+      {
+        
+          if(document.getElementById("cachebustercb").checked)
+          {
+            document.getElementById("cachebustercb").checked = false;
+            location.href = location.href;
+            return;
+          }
+        
+      
+        
+          
+          
+          
+          
+            
+            
+              _registration = new Registration(2);
+              
+                _registration.setUsernameRegEx(_registration.getEmailRegEx());
+              
+              _auth = new Authentication("", "..");
+              
+              
+              
+              _registration.check_promo();
+            
+          
+          
+        
+        __postInit();
+      }
+      
+      function __additionalSubmitCallback(result, xml) 
+      {
+        switch(result)
+        {
+          case "registered":
+            g_registered = true;
+            document.getElementById("iptvauth_field_username").value = document.getElementById("iptvreg_field_username").value;
+            document.getElementById("iptvauth_field_password").value = document.getElementById("iptvreg_field_password").value;
+            _auth.processLogin();
+            break;
+          case "subscribedsuccess":
+          case "updatesuccess":
+            if(_registration.getArg("paytype")!= null && _registration.getArg("paytype") != "cc")
+            {
+              var elem_payment_methods = document.getElementById("iptvreg_regconfirm_fieldgroup_payment_methods");
+              if(elem_payment_methods != null) { elem_payment_methods.style.display = ""; }
+            }
+        }
+      }
+      
+      function __customShowPage(targetPage, pageToValidate)
+      {
+        var payment_page = 1;
+        
+        if(targetPage==payment_page)
+        {
+          var pi = __getPackageInfo();
+          if(window.NLTracker!=null)
+          { 
+            pi.skuName = (pi.packageName!=null)?pi.packageName:document.getElementById("packageName").innerHTML;
+            pi.ppv = (pi.ppvid!=null || pi.ppvids!=null);
+            pi.price = pi.cost;
+            NLTracker.trackPurchaseBilling(pi);
+          }
+          else
+            nlTrackPurchaseBilling();
+  
+          dataLayer.push({"event":"billing"});
+          __customTrackBilling(pi);
+        }
+        return false;
+      }
+      
+      var g_registered = false;
+      function __iptvAuthLoginSuccessful(result, xml) 
+      {
+        if(window.NLTracker!=null)
+        {
+          var subType = _util.selectSingleNodeText(xml, "/result/data/hasSubscription");
+          if(subType!=null && subType.length>0)
+          {
+            if(_util.selectSingleNodeText(xml, "/result/data/hasFreeTrial")!=null)
+              subType = "TrialSubscriber";
+            else
+              subType = "Subscriber";
+          }
+          else
+            subType = null;
+          NLTracker.trackLogin(document.getElementById("iptvauth_field_username").value, subType, _util.selectSingleNodeText(xml, "/result/data/trackUsername"));
+        }
+        else
+          nlTrackAuthenticated();
+        
+        if(!_registration.isRegistered())
+          setTimeout("iptvAuthLoginSuccessfulLater()",500);
+        else
+        {
+          window.g_isLoggedIn=true;
+          _registration.showPage(1);
+          document.getElementById("cachebustercb").checked = true;
+          
+          
+          
+          
+            if(_registration.canSkipValidating(1)) { _registration.processSubmission(1); }
+          
+          
+        }
+      }
+      function iptvAuthLoginSuccessfulLater()
+      {
+        var u = location.href;
+        if(u.indexOf("#")>0) { u = u.substr(0, u.indexOf("#")); }
+        location.href = u;
+      }
+      
+      function __trackRegistration()
+      {
+        __trackSubscription();
+      }
+      function __trackSubscription()
+      {
+        var newUser = false;
+        newUser = true;
+        var pi = __getPackageInfo();
+        pi.skuName = (pi.packageName!=null)?pi.packageName:document.getElementById("packageName").innerHTML;
+        pi.ppv = (pi.ppvid!=null || pi.ppvids!=null);
+        pi.isReg = newUser;
+        pi.storeName = "PokerGO";
+        pi.orderTotal = pi.price;
+        pi.price = pi.cost;
+        if(document.getElementById("iptvreg_field_billing_city")!=null)
+        {
+          pi.billingCity = document.getElementById("iptvreg_field_billing_city").value;
+          pi.billingState = document.getElementById("iptvreg_field_billing_state").value;
+          pi.billingCountry = document.getElementById("iptvreg_field_billing_country").value;
+        }
+        if(window.NLTracker!=null)
+          NLTracker.trackPurchaseConfirmation(pi);
+        else
+          nlTrackPurchase('PokerGO',newUser);
+        
+        dataLayer.push({"order":pi,"event":"purchase"});
+        __customTrackSubscription(pi);
+      }
+      
+      
+      
+      function linkBack()
+      {
+        
+          
+          
+          
+            location.href = "https://www.pokergo.com/";
+          
+        
+      }
+      
+      function showSection(section)
+      {
+        var elem = document.getElementById(section);
+        if(elem == null) { return; }
+        
+        var elem_existing_user = document.getElementById("current_user");
+        var elem_new_user = document.getElementById("new_user");
+        var elem_signin_register = document.getElementById("signin_register");
+        if("current_user"==section)
+        {
+            if(elem_signin_register != null) elem_signin_register.style.display="none";
+            if(elem_new_user != null) elem_new_user.style.display = "none";
+            elem_existing_user.style.display="";
+        } else if("new_user"==section)
+        {
+          if(elem_signin_register != null) elem_signin_register.style.display="none";
+          if(elem_existing_user != null) elem_existing_user.style.display="none";
+        } else {
+          if(elem_new_user != null) elem_new_user.style.display = "none";
+          if(elem_existing_user != null) elem_existing_user.style.display="none";
+        }
+        
+        var elem_packageArea = document.getElementById("iptvreg_packageArea_container");
+        if(elem_packageArea != null) { elem_packageArea.style.display = "new_user"==section?"":"none"; }
+          
+        elem.style.display="";
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        track(section);
+      }
+      function __postSkipPayment(zerocost, skipPaytype, skipCreditCard, skipBilling)
+      {
+        var elem = document.getElementById("iptvreg_payment_container");
+        if(elem != null) { elem.style.display = (skipCreditCard && skipBilling && zerocost)?"none":"";}
+        
+      }
+      function track(section)
+      {
+        switch(section)
+        {
+        case "new_user":
+          break;
+        case "current_user":
+          break;
+        default:
+        }
+      }
+      function buyGift(gifting)
+      {
+        var url = location.href;
+        if(gifting)
+        {
+          location.href = url + (url.indexOf("?")>=0?"&":"?") + "gift=true";
+        } else {
+          var newUrl = "subscription";
+          var queryString = url.indexOf("?")>=0?url.substr(url.indexOf("?")+1):"";
+          if (queryString != "")
+          {
+            var params = queryString.split("&");
+                for (var i = params.length - 1; i >= 0; i -= 1) {
+                  var param = params[i].split("=")[0];
+                  if("gift"==param) { params.splice(i, 1); }
+                }
+                newUrl = newUrl + "?" + params.join("&");
+          }
+          location.href = newUrl;
+        }
+      }
+      
+      function editUKDD()
+      {
+        _registration.editUKDD();
+      }
+      function submitUKDD()
+      {
+        _registration.submitUKDD();
+      }
+    </script>
+    <script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nltracker.js"></script>
+    
+      
+      <script>NLTracker.initialize({locResource:"https://neulionms-a.akamaihd.net/mt1/player1/base/site/",locQos:"//nlqosdrecv01.neulion.com/msdrecv/ProxyBean",site:"pokergo",gaa:"UA-57294405-6"});NLTracker.trackPage("/purchase/anonymous");</script>
+    
+    <script>
+      var dataLayer = [{"page":{"name":"subscription","category":"purchase"},"user":{"country":"US","lang":"","state":"anonymous"}}];
+    </script>
+  
+  
+  
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site_4/scripts/lib/jquery.cookie.js"></script>
+    <script>
+      function __trackSubscription()
+      {
+        var newUser = false;
+        newUser = true;
+        var pi = __getPackageInfo();
+        pi.skuName = (pi.packageName!=null)?pi.packageName:document.getElementById("packageName").innerHTML;
+        pi.ppv = (pi.ppvid!=null || pi.ppvids!=null);
+        pi.isReg = newUser;
+        pi.storeName = "PokerGO";
+        pi.orderTotal = pi.price;
+        pi.price = pi.cost;
+        if($('#iptvreg_field_promo').val() != null && $('#iptvreg_field_promo').val().trim() !== '')
+          pi.coupon = $('#iptvreg_field_promo').val().trim();
+        if(document.getElementById("iptvreg_field_billing_city")!=null)
+        {
+          pi.billingCity = document.getElementById("iptvreg_field_billing_city").value;
+          pi.billingState = document.getElementById("iptvreg_field_billing_state").value;
+          pi.billingCountry = document.getElementById("iptvreg_field_billing_country").value;
+        }
+        if(window.NLTracker!=null)
+          NLTracker.trackPurchaseConfirmation(pi);
+        else
+          nlTrackPurchase('PokerGO',newUser);
+        // GTM transaction
+        // 'transactionId' & 'transactionTotal' are must for transaction tracking
+        // otherwise the event will not be triggered
+        dataLayer.push({
+          'transactionId': pi.orderid,
+          'transactionTotal': parseFloat(pi.orderTotal),
+            'transactionTax': parseFloat(pi.tax),
+            'transactionProducts':[{
+              'sku': pi.sku,
+              'name': pi.skuName,
+              'price': pi.price
+            }],
+          "order":pi,
+          "event":"purchase"
+        });
+        
+        if(username == null)
+        {
+          username = document.getElementById("iptvauth_field_username").value;
+        }
+        window['friendbuy'] = window['friendbuy'] || [];
+        window['friendbuy'].push(['track', 'order', 
+          {
+              id: pi.orderid, //INPUT ORDER ID
+              amount: pi.price, //INPUT ORDER AMOUNT
+              coupon_code: pi.coupon ? pi.coupon : '', //OPTIONAL, coupon code if used for order
+              new_customer: newUser ? true : false, //OPTIONAL, true if this is the customer's first purchase
+              email: username //INPUT EMAIL
+          }
+        ]);
+        __customTrackPurchase(pi);
+        $(".friendbuy-dyv-mnL").click();
+      }
+      
+      function __customTrackBilling(pi)
+      {
+        _satellite.track("payflow:billing_payment");
+        console.log('GTM billing event');
+      }
+      
+      function __customTrackPurchase(pi)
+      {
+        var pc = (document.getElementById("iptvreg_field_promo") != null) ? document.getElementById("iptvreg_field_promo").value : "";
+        var transaction = {
+          total: {currency: pi.currency, transactionTotal: pi.orderTotal, voucherCode: pc},
+          transactionID: pi.orderid,
+          item: [{quantity: 1, price: {basePrice: pi.price}, productInfo: {sku: pi.sku}}],
+          profile: {address: {statProvince: pi.billingState, postalCode: pi.billingCountry}}
+        };
+        digitalData.transaction = transaction;
+        _satellite.track("payflow:confirm");
+      }
+      var digitalData = {
+        page: {
+          pageInfo: {
+            pageName: "pokergo:payflow:PANNUAL",
+            language: ""
+          },
+          category: {
+            primaryCategory: "pokergo",
+            subCategory1: "pokergo:payflow:PANNUAL",
+            subCategory2: "pokergo:payflow:PANNUAL"
+          }
+        },
+        user: {
+          userState: "guest",
+          memberType: ""
+        },
+        cart: {
+          item: [{productInfo: {sku: "PANNUAL"}}],
+          price: {voucherCode: "10off"}
+        }
+      };
+    </script>
+    
+    <script>
+      var dataLayer = [{
+        "page":{
+          "name":"subscription",
+          "category":"purchase"
+        },"user":{
+          "id":"",
+          "country":"US",
+          "lang":"en_US",
+          "state":"anonymous"
+        }
+      }];
+      
+    </script>
+      
+  
+  
+
+
+<script src="https://assets.adobedtm.com/ed255d28eeb9f0f573b8296f2c47c2f0a85790e2/s-code-contents-bb80233cd44a4f8ad9fea2aab29b8832b25d7f8f-staging.js"></script><meta name="<meta name=&quot;google-site-verification" content="SPGqpKWLAD6EAljM1CF3EmZoC1lb0bCwOb6ox-oLSo"><script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/853562997/?random=1540223387622&amp;cv=9&amp;fst=1540223387622&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=659255991&amp;u_h=812&amp;u_w=375&amp;u_ah=812&amp;u_aw=375&amp;u_cd=32&amp;u_his=3&amp;u_tz=-240&amp;u_java=false&amp;u_nplug=0&amp;u_nmime=0&amp;gtm=Gaf&amp;sendb=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.pokergo.com%2Fsecure%2Fsubscription%3Fsignup%3Dtrue%26sku%3DPANNUAL%26code%3D10off%26&amp;ref=https%3A%2F%2Fget.pokergo.com%2F&amp;tiba=PokerGO&amp;async=1&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nlbase/nlga" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nlga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nlbase/nltrack.min" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nltrack.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nlbase/nlqos" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/nlqos.js"></script></head>
+<body onload="init()" style="">
+  
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-KP8RCP5"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KP8RCP5');</script>
+  
+  
+  
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+    <tbody><tr>
+      <td align="center" class="header reg">
+        <div id="header">
+          
+          <div id="headerLeft"><a href="https://www.pokergo.com/"><img src="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site_4/images/menulogo.png" border="0"></a></div>
+          <div id="headerRight" class="hidden-ph"></div>
+        </div>
+      </td>
+    </tr>
+    <tr height="100%">
+      <td valign="top">
+        
+          
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+  
+  
+  
+  
+  <div id="iptv_content">
+  
+  <div id="iptvreg_page_0">
+    
+    <div id="current_user" style="display:none">
+      <div class="stepsContainer">
+        <div class="reg-content-width steps hidden-ph">
+         <ul class="stepsList">
+          <li class="past">SUBSCRIPTION<span class="purchase-icon"></span></li>
+          <li class="sel">ACCOUNT</li>
+          <li>PAYMENT</li>
+          <li>CONFIRMATION</li>
+         </ul>
+        </div>
+        <div class="reg-content-width steps visible-ph">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody><tr>
+              <td class="reg-carousel-arrow active" valign="middle"></td>
+              <td width="100%" valign="middle">
+                 <div class="text-center">
+                  <span class="reg-carousel sel">ACCOUNT</span>
+                  <ol class="reg-carousel-indicators" style="position:relative">
+                      <li class="active"></li>
+                      <li class="active"></li>
+                      <li></li>
+                      <li></li>
+                    </ol>
+                </div>
+              </td>
+              <td class="reg-carousel-arrow" valign="middle"></td>
+            </tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="login-content">
+      <div id="iptvauth_page_login">
+        <div class="section-bottom text-center"><h1>SIGN IN</h1></div>
+        
+        <div class="form-group">
+              <label class="label hidden-ph" for="iptvauth_field_username">EMAIL:<span class="required labelErrorDesc">&nbsp;*</span></label>
+              <input class="input" id="iptvauth_field_username" type="email" placeholder="EMAIL:" iptvautherrorclass="input validationError" maxlength="128">
+          <div id="iptvauth_error_username" style="display:none"></div>
+        </div>
+        <div class="form-group">
+          <label class="label hidden-ph" for="iptvauth_field_password">PASSWORD<span class="required labelErrorDesc">&nbsp;*</span></label>
+              <input class="input" type="password" id="iptvauth_field_password" placeholder="PASSWORD" iptvautherrorclass="input validationError" maxlength="20" onkeydown="if(event &amp;&amp; event.keyCode=='13'){_auth.processLogin();}">
+          <div id="iptvauth_error_password" style="display:none"></div>
+        </div>
+        <div class="paragraph-top">
+          
+            
+              <label class="reg-checkbox label"><input type="checkbox" id="iptvauth_linkme">Keep me signed in</label>
+              <div><span class="instruct">Don't check if on a public or shared computer</span></div>
+            
+            
+          
+        </div>
+        <div class="section-top">
+          <div><a class="btn continue" style="width:100%" href="javascript:_auth.processLogin()">CONTINUE</a></div>
+          <div class="section-top"><a href="javascript:_auth.showForgotPassword();" class="reg-link" id="iptvreg_btn_showforgotpassword">Forgot Password</a></div>
+          <div style="padding-top:10px" class="text not_subscriber">Not a subscriber? <a href="javascript:showSection('new_user');" class="reg-link">SIGN UP NOW</a></div>
+        </div>
+      </div>
+      <div id="iptvauth_page_forgotpassword" style="display:none">
+        <div class="section-bottom text-center"><h1>FORGOT PASSWORD</h1></div>
+        <div class="label">EMAIL:</div>
+        <input class="input" id="iptvauth_field_forgotpassword_username" iptvautherrorclass="input validationError" maxlength="128" onkeydown="if(event &amp;&amp; event.keyCode=='13'){_auth.processRequest('forgotpassword');}">
+        <div id="iptvauth_error_forgotpassword_username" style="display:none;"></div>
+        <div class="section-top">
+          <a href="javascript:_auth.processRequest('forgotpassword');" class="btn continue" style="width:100%" id="iptvauth_forgotpassword_send">RESET PASSWORD</a>
+        </div>
+        <div class="section-top">
+          <a href="javascript:_auth.hideForgotPassword();" class="reg-link">CANCEL</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="new_user">
+      <div id="iptvreg_account_stepsContainer">
+      <div class="stepsContainer">
+        <div class="reg-content-width steps hidden-ph">
+         <ul class="stepsList">
+          <li class="past">SUBSCRIPTION<span class="purchase-icon"></span></li>
+          <li class="sel">ACCOUNT</li>
+          <li>PAYMENT</li>
+          <li>CONFIRMATION</li>
+         </ul>
+        </div>
+        <div class="reg-content-width steps visible-ph">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody><tr>
+              <td class="reg-carousel-arrow active" valign="middle"></td>
+              <td width="100%" valign="middle">
+                 <div class="text-center">
+                  <span class="reg-carousel sel">ACCOUNT</span>
+                  <ol class="reg-carousel-indicators" style="position:relative">
+                      <li class="active"></li>
+                      <li class="active"></li>
+                      <li></li>
+                      <li></li>
+                    </ol>
+                </div>
+              </td>
+              <td class="reg-carousel-arrow" valign="middle"></td>
+            </tr>
+          </tbody></table>
+        </div>
+      </div>
+      </div>
+      <div id="iptvreg_new_user_container">
+      <div class="reg-content-width reg-content" id="iptvreg_new_user">
+        <div id="iptvreg_section_account" class="label">ACCOUNT INFO<span class="required labelErrorDesc">&nbsp;*</span></div>
+        <div class="reg-row">
+              <div class="col-1-ph col-2-tb">
+                <div class="form-group">
+                  <label class="label hidden-ph" for="iptvreg_field_firstname">FIRST NAME:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                  <input class="input" value="" id="iptvreg_field_firstname" placeholder="FIRST NAME:" iptvregerrorclass="input validationError" maxlength="40">
+              <div id="iptvreg_error_firstname" style="display:none"></div>
+                </div>
+              </div>
+              <div class="col-1-ph col-2-tb">
+                  <div class="form-group">
+                    <label class="label hidden-ph" for="iptvreg_field_lastname">LAST NAME:<span class="required labelErrorDesc">&nbsp;*</span></label>
+              <input class="input" value="" id="iptvreg_field_lastname" placeholder="LAST NAME:" iptvregerrorclass="input validationError" maxlength="40">
+              <div id="iptvreg_error_lastname" style="display:none"></div>
+            </div>
+              </div>
+          </div>
+          <div class="reg-row" id="iptvreg_label_username_container">
+              <div class="col-1-ph">
+                <label class="label hidden-ph" for="iptvreg_field_username">EMAIL:<span class="required labelErrorDesc">&nbsp;*</span></label>
+              </div>
+            </div>
+            <div class="reg-row">
+              <div class="form-group">
+              
+              
+              
+                <div class="col-1-ph col-2-tb">
+                  <input class="input" type="email" value="" id="iptvreg_field_username" placeholder="EMAIL:" iptvregerrorclass="input validationError" maxlength="128">
+                  <div id="iptvreg_error_username" style="display:none"></div>
+                </div>
+              
+              
+              
+          
+          
+            <div class="clearfix"></div>
+          
+          
+            <div class="clearfix"></div>
+              </div>
+            </div>
+          
+          <div class="reg-row">
+              <div class="col-1-ph col-2-tb">
+                <div class="form-group">
+                  <label class="label" for="iptvreg_field_password">PASSWORD<span class="required labelErrorDesc">&nbsp;*</span></label>
+                  <input class="input" type="password" id="iptvreg_field_password" placeholder="PASSWORD" iptvregerrorclass="input validationError" maxlength="16">
+              <div id="iptvreg_error_password" style="display:none"></div>
+                </div>
+              </div>
+              <div class="col-1-ph col-2-tb">
+                  <div class="form-group">
+                    <label class="label hidden-ph" for="iptvreg_field_passwordretype">CONFIRM PASSWORD:<span class="required labelErrorDesc">&nbsp;*</span></label>
+              <input class="input" type="password" id="iptvreg_field_passwordretype" placeholder="CONFIRM PASSWORD:" iptvregerrorclass="input validationError" maxlength="16">
+              <div id="iptvreg_error_passwordretype" style="display:none"></div>
+            </div>
+              </div>
+          </div>
+          
+          <div class="clearfix"></div>
+          <div class="reg-row paragraph-top">
+            
+            
+            <div class="col-1-ph">
+              <label class="reg-checkbox"><input type="checkbox" id="iptvreg_field_termsofuse" iptvregerrorclass="validationError">By creating this account you agree to our <a href="https://www.pokergo.com/tos" target="_blank" class="link">Terms of Use</a> and <a href="https://www.pokergo.com/privacy" target="_blank" class="link">Privacy Policy</a></label>
+              <div id="iptvreg_error_termsofuse" style="padding-left:20px;display:none"></div>
+            </div>
+          </div>
+          <div class="required">
+            <div class="reg-row">
+              <div class="paragraph-top">
+                <div class="col-1-ph">
+                  <div class="center-ph left-tb italic"><span class="labelErrorDesc">*</span>&nbsp;<span class="text">Denotes a required field</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+  </div>
+  
+  <div style="display:none" id="iptvreg_page_1">
+    <div id="iptvreg_payment_stepsContainer">
+    <div class="stepsContainer">
+      <div class="reg-content-width steps hidden-ph">
+         <ul class="stepsList">
+          <li class="past">SUBSCRIPTION<span class="purchase-icon"></span></li>
+          <li class="past">ACCOUNT<span class="purchase-icon"></span></li>
+          <li class="sel">PAYMENT</li>
+          <li>CONFIRMATION</li>
+         </ul>
+      </div>
+      <div class="reg-content-width steps visible-ph">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tbody><tr>
+            <td class="reg-carousel-arrow active" valign="middle"></td>
+            <td width="100%" valign="middle">
+               <div class="text-center">
+                <span class="reg-carousel sel">PAYMENT</span>
+                <ol class="reg-carousel-indicators" style="position:relative">
+                    <li class="active"></li>
+                    <li class="active"></li>
+                    <li class="active"></li>
+                    <li></li>
+                  </ol>
+              </div>
+            </td>
+            <td class="reg-carousel-arrow" valign="middle"></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+    </div>
+    <div id="iptvreg_payment_container">
+    
+    
+     
+      <div class="reg-content-width reg-content" id="iptvreg_payment">
+        <div class="reg-row">
+          <div class="col-1-ph col-2-dp">
+            
+            <div class="section-bottom">
+              <div class="paragraph-bottom"><h2>PAYMENT</h2></div>
+              <div id="iptvreg_fieldgroup_paytype">
+                <div id="iptvreg_field_paytype" iptvregerrorclass="validationError">
+                  <div class="reg-radio"><label><input type="radio" autocomplete="off" name="paytypes" id="iptvreg_paytype_0" value="cc" onclick="javascript:_registration.onChangePaytype(this);" checked="true"><span>CREDIT / DEBIT CARD</span></label></div>
+                  
+                  
+                  <div class="reg-radio"><label><input type="radio" autocomplete="off" name="paytypes" id="iptvreg_paytype_1" onclick="javascript:_registration.onChangePaytype(this)" value="paypalset"><span><img src="https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif" align="absmiddle" alt="PayPal" title="PayPal" style="margin-right:7px"><span style="font-size:11px;font-family:arial,verdana">The safer, easier way to pay.</span></span></label></div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                </div>
+                <div id="iptvreg_error_paytype" style="display:none;padding-left:10px"></div>
+              </div>
+            </div>
+            
+            
+            
+            
+              <div class="section-bottom" id="iptvreg_fieldgroup_creditcard">
+                <div class="paragraph-bottom">
+                <div class="paragraph-bottom" id="iptvreg_section_creditcard"><h2>CREDIT / DEBIT CARD<span class="required labelErrorDesc"><span class="hidden-tb hidden-dp">&nbsp;*</span></span></h2></div>
+                
+                <div id="iptvreg_cards_accepted_container">
+                  <div class="bold" style="margin-bottom:5px">CARDS WE ACCEPT</div>
+                  <img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/card_visa.png" align="absmiddle" hspace="1" vspace="1"><img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/card_mastercard.png" align="absmiddle" hspace="1" vspace="1"><img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/card_amex.png" align="absmiddle" hspace="1" vspace="1"><img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/card_discover.png" align="absmiddle" hspace="1" vspace="1">
+                </div>
+                
+                </div>
+                <div class="reg-row" id="iptvreg_cardtype_container">
+                      <div class="col-1-ph col-2-tb col-1-dp">
+                        <div class="form-group">
+                          <label class="label" for="iptvreg_field_cardtype">CARD TYPE:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                          <select class="input" id="iptvreg_field_cardtype" iptvregerrorclass="input validationError">
+                        
+                          <option value="VISA">Visa</option>
+                        
+                          <option value="MASTERCARD">MasterCard</option>
+                        
+                          <option value="AMEX">American Express</option>
+                        
+                          <option value="DISCOVER">Discover</option>
+                        
+                      </select>
+                      <div id="iptvreg_error_cardtype" style="display:none"></div>
+                        </div>
+                      </div>
+                  </div>
+                <div class="reg-row">
+                  
+                      <div class="col-1-ph col-2-tb col-1-dp">
+                        <div class="form-group">
+                          <label class="label hidden-ph" for="iptvreg_field_cardholder">CARDHOLDER NAME:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                          <input class="input" id="iptvreg_field_cardholder" value="" placeholder="CARDHOLDER NAME:" iptvregerrorclass="input validationError" maxlength="128">
+                      <div id="iptvreg_error_cardholder" style="display:none"></div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-1-ph col-2-tb col-1-dp">
+                          <div class="form-group">
+                            <label class="label hidden-ph" for="iptvreg_field_cardnumber">CARD NUMBER:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                      <input class="input" value="" placeholder="CARD NUMBER:" id="iptvreg_field_cardnumber" iptvregerrorclass="input validationError" maxlength="16">
+                      <div id="iptvreg_error_cardnumber" style="display:none"></div>
+                    </div>
+                      </div>
+                  </div>
+                  <div class="reg-row">
+                      <div class="col-1-ph col-2-tb col-dp3-2">
+                        <div class="form-group">
+                          <label class="label" for="iptvreg_field_cardexpmonth">EXPIRATION DATE:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                          <div class="clearfix"></div>
+                          <div class="reg-row">
+                            <div class="col-2-ph" id="iptvreg_row_cardexpmonth">
+                              <select class="input" id="iptvreg_field_cardexpmonth" iptvregerrorclass="input validationError">
+                            <option value="" selected="">Month</option>
+                            
+                              <option value="1">1</option>
+                            
+                              <option value="2">2</option>
+                            
+                              <option value="3">3</option>
+                            
+                              <option value="4">4</option>
+                            
+                              <option value="5">5</option>
+                            
+                              <option value="6">6</option>
+                            
+                              <option value="7">7</option>
+                            
+                              <option value="8">8</option>
+                            
+                              <option value="9">9</option>
+                            
+                              <option value="10">10</option>
+                            
+                              <option value="11">11</option>
+                            
+                              <option value="12">12</option>
+                              
+                          </select>
+                        </div>
+                        <div class="col-2-ph" id="iptvreg_row_cardexpyear">
+                          <select class="input" id="iptvreg_field_cardexpyear" iptvregerrorclass="input validationError"> 
+                            <option value="" selected="true">Year</option>
+                            
+                              <option value="2018">2018</option>
+                            
+                              <option value="2019">2019</option>
+                            
+                              <option value="2020">2020</option>
+                            
+                              <option value="2021">2021</option>
+                            
+                              <option value="2022">2022</option>
+                            
+                              <option value="2023">2023</option>
+                            
+                              <option value="2024">2024</option>
+                            
+                              <option value="2025">2025</option>
+                            
+                              <option value="2026">2026</option>
+                            
+                              <option value="2027">2027</option>
+                            
+                              <option value="2028">2028</option>
+                            
+                              <option value="2029">2029</option>
+                            
+                              <option value="2030">2030</option>
+                            
+                              <option value="2031">2031</option>
+                            
+                              <option value="2032">2032</option>
+                            
+                              <option value="2033">2033</option>
+                            
+                          </select>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <div id="iptvreg_error_cardexpmonth" style="display:none"></div>
+                      <div id="iptvreg_error_cardexpyear" style="display:none"></div>
+                        </div>
+                      </div>
+                      <div id="iptvreg_row_cardsc">
+                      <div class="col-1-ph col-2-tb col-dp3-1">
+                          <div class="form-group">
+                            <label class="label hidden-ph" for="iptvreg_field_cardsc">SECURITY CODE:<span class="required labelErrorDesc">&nbsp;*</span><div id="cardSCInstructOver" tabindex="1" onclick="this.focus();"><span id="cardSCIcon">[?]</span><div id="cardSCInstructOverImg"><img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/securitycode.png"></div></div></label>
+                            <input class="input" type="number" id="iptvreg_field_cardsc" placeholder="SECURITY CODE:" iptvregerrorclass="input validationError" maxlength="4"><div id="cardSCInstructOver-ph" tabindex="1" onclick="this.focus();"><span id="cardSCIcon-ph">[?]</span><div id="cardSCInstructOverImg-ph"><img src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/securitycode.png"></div></div>
+                      <div id="iptvreg_error_cardsc" style="display:none"></div>
+                    </div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+            
+            
+          </div>
+          <div class="col-1-ph col-2-dp">
+            <div id="iptvreg_fieldgroup_billing">
+              <div class="paragraph-bottom" id="iptvreg_section_billing"><h2>BILLING<span class="required labelErrorDesc"><span class="hidden-tb hidden-dp">&nbsp;*</span></span></h2></div>
+              <div class="reg-row">
+                    <div class="col-1-ph col-2-tb col-1-dp">
+                      <div class="form-group">
+                        <label class="label" for="iptvreg_field_billing_country">COUNTRY:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <select class="input" id="iptvreg_field_billing_country" iptvregerrorclass="input validationError" onchange="_registration.onChangeCountry(this,'billing_state');" autocomplete="off">
+                      <option value="" selected="true">(Select Country)</option>
+                      
+                        <option value="US" selected="true">UNITED STATES</option>
+                      
+                        <option value="CA">CANADA</option>
+                      
+                        <option value="AF">AFGHANISTAN</option>
+                      
+                        <option value="AX">ALAND ISLANDS</option>
+                      
+                        <option value="AL">ALBANIA</option>
+                      
+                        <option value="DZ">ALGERIA</option>
+                      
+                        <option value="AS">AMERICAN SAMOA</option>
+                      
+                        <option value="AD">ANDORRA</option>
+                      
+                        <option value="AO">ANGOLA</option>
+                      
+                        <option value="AI">ANGUILLA</option>
+                      
+                        <option value="AQ">ANTARCTICA</option>
+                      
+                        <option value="AG">ANTIGUA AND BARBUDA</option>
+                      
+                        <option value="AR">ARGENTINA</option>
+                      
+                        <option value="AM">ARMENIA</option>
+                      
+                        <option value="AW">ARUBA</option>
+                      
+                        <option value="AU">AUSTRALIA</option>
+                      
+                        <option value="AT">AUSTRIA</option>
+                      
+                        <option value="AZ">AZERBAIJAN</option>
+                      
+                        <option value="BS">BAHAMAS</option>
+                      
+                        <option value="BH">BAHRAIN</option>
+                      
+                        <option value="BD">BANGLADESH</option>
+                      
+                        <option value="BB">BARBADOS</option>
+                      
+                        <option value="BY">BELARUS</option>
+                      
+                        <option value="BE">BELGIUM</option>
+                      
+                        <option value="BZ">BELIZE</option>
+                      
+                        <option value="BJ">BENIN</option>
+                      
+                        <option value="BM">BERMUDA</option>
+                      
+                        <option value="BT">BHUTAN</option>
+                      
+                        <option value="BO">BOLIVIA</option>
+                      
+                        <option value="BQ">BONAIRE</option>
+                      
+                        <option value="BA">BOSNIA AND HERZEGOVINA</option>
+                      
+                        <option value="BW">BOTSWANA</option>
+                      
+                        <option value="BV">BOUVET ISLAND</option>
+                      
+                        <option value="BR">BRAZIL</option>
+                      
+                        <option value="IO">BRITISH INDIAN OCEAN TERRITORY</option>
+                      
+                        <option value="BN">BRUNEI DARUSSALAM</option>
+                      
+                        <option value="BG">BULGARIA</option>
+                      
+                        <option value="BF">BURKINA FASO</option>
+                      
+                        <option value="BI">BURUNDI</option>
+                      
+                        <option value="CV">CABO VERDE</option>
+                      
+                        <option value="KH">CAMBODIA</option>
+                      
+                        <option value="CM">CAMEROON</option>
+                      
+                        <option value="KY">CAYMAN ISLANDS</option>
+                      
+                        <option value="CF">CENTRAL AFRICAN REPUBLIC</option>
+                      
+                        <option value="TD">CHAD</option>
+                      
+                        <option value="CL">CHILE</option>
+                      
+                        <option value="CN">CHINA</option>
+                      
+                        <option value="CX">CHRISTMAS ISLAND</option>
+                      
+                        <option value="CC">COCOS</option>
+                      
+                        <option value="CO">COLOMBIA</option>
+                      
+                        <option value="KM">COMOROS</option>
+                      
+                        <option value="CG">CONGO</option>
+                      
+                        <option value="CD">CONGO(THE DEMOCRATIC REPUBLIC OF)</option>
+                      
+                        <option value="CK">COOK ISLANDS</option>
+                      
+                        <option value="CR">COSTA RICA</option>
+                      
+                        <option value="CI">COTE D'IVOIRE</option>
+                      
+                        <option value="HR">CROATIA</option>
+                      
+                        <option value="CU">CUBA</option>
+                      
+                        <option value="CW">CURACAO</option>
+                      
+                        <option value="CY">CYPRUS</option>
+                      
+                        <option value="CZ">CZECH REPUBLIC</option>
+                      
+                        <option value="DK">DENMARK</option>
+                      
+                        <option value="DJ">DJIBOUTI</option>
+                      
+                        <option value="DM">DOMINICA</option>
+                      
+                        <option value="DO">DOMINICAN REPUBLIC</option>
+                      
+                        <option value="EC">ECUADOR</option>
+                      
+                        <option value="EG">EGYPT</option>
+                      
+                        <option value="SV">EL SALVADOR</option>
+                      
+                        <option value="GQ">EQUATORIAL GUINEA</option>
+                      
+                        <option value="ER">ERITREA</option>
+                      
+                        <option value="EE">ESTONIA</option>
+                      
+                        <option value="ET">ETHIOPIA</option>
+                      
+                        <option value="FK">FALKLAND ISLANDS (MALVINAS)</option>
+                      
+                        <option value="FO">FAROE ISLANDS</option>
+                      
+                        <option value="FJ">FIJI</option>
+                      
+                        <option value="FI">FINLAND</option>
+                      
+                        <option value="FR">FRANCE</option>
+                      
+                        <option value="GF">FRENCH GUIANA</option>
+                      
+                        <option value="PF">FRENCH POLYNESIA</option>
+                      
+                        <option value="TF">FRENCH SOUTHERN TERRITORIES</option>
+                      
+                        <option value="GA">GABON</option>
+                      
+                        <option value="GM">GAMBIA</option>
+                      
+                        <option value="GE">GEORGIA</option>
+                      
+                        <option value="DE">GERMANY</option>
+                      
+                        <option value="GH">GHANA</option>
+                      
+                        <option value="GI">GIBRALTAR</option>
+                      
+                        <option value="GR">GREECE</option>
+                      
+                        <option value="GL">GREENLAND</option>
+                      
+                        <option value="GD">GRENADA</option>
+                      
+                        <option value="GP">GUADELOUPE</option>
+                      
+                        <option value="GU">GUAM</option>
+                      
+                        <option value="GT">GUATEMALA</option>
+                      
+                        <option value="GG">GUERNSEY</option>
+                      
+                        <option value="GN">GUINEA</option>
+                      
+                        <option value="GW">GUINEA-BISSAU</option>
+                      
+                        <option value="GY">GUYANA</option>
+                      
+                        <option value="HT">HAITI</option>
+                      
+                        <option value="HM">HEARD ISLAND AND MCDONALD ISLANDS</option>
+                      
+                        <option value="HN">HONDURAS</option>
+                      
+                        <option value="HK">HONG KONG</option>
+                      
+                        <option value="HU">HUNGARY</option>
+                      
+                        <option value="IS">ICELAND</option>
+                      
+                        <option value="IN">INDIA</option>
+                      
+                        <option value="ID">INDONESIA</option>
+                      
+                        <option value="IR">IRAN</option>
+                      
+                        <option value="IQ">IRAQ</option>
+                      
+                        <option value="IE">IRELAND</option>
+                      
+                        <option value="IM">ISLE OF MAN</option>
+                      
+                        <option value="IL">ISRAEL</option>
+                      
+                        <option value="IT">ITALY</option>
+                      
+                        <option value="JM">JAMAICA</option>
+                      
+                        <option value="JP">JAPAN</option>
+                      
+                        <option value="JE">JERSEY</option>
+                      
+                        <option value="JO">JORDAN</option>
+                      
+                        <option value="KZ">KAZAKHSTAN</option>
+                      
+                        <option value="KE">KENYA</option>
+                      
+                        <option value="KI">KIRIBATI</option>
+                      
+                        <option value="KP">KOREA(THE DEMOCATIC PEOPLE'S REPUBLIC OF)</option>
+                      
+                        <option value="KR">KOREA(THE REPUBLIC OF)</option>
+                      
+                        <option value="KW">KUWAIT</option>
+                      
+                        <option value="KG">KYRGYZSTAN</option>
+                      
+                        <option value="LA">LAO PEOPLE'S DEMOCRATIC REPUBLIC</option>
+                      
+                        <option value="LV">LATVIA</option>
+                      
+                        <option value="LB">LEBANON</option>
+                      
+                        <option value="LS">LESOTHO</option>
+                      
+                        <option value="LR">LIBERIA</option>
+                      
+                        <option value="LY">LIBYA</option>
+                      
+                        <option value="LI">LIECHTENSTEIN</option>
+                      
+                        <option value="LT">LITHUANIA</option>
+                      
+                        <option value="LU">LUXEMBOURG</option>
+                      
+                        <option value="MO">MACAO</option>
+                      
+                        <option value="MK">MACEDONIA</option>
+                      
+                        <option value="MG">MADAGASCAR</option>
+                      
+                        <option value="MW">MALAWI</option>
+                      
+                        <option value="MY">MALAYSIA</option>
+                      
+                        <option value="MV">MALDIVES</option>
+                      
+                        <option value="ML">MALI</option>
+                      
+                        <option value="MT">MALTA</option>
+                      
+                        <option value="MH">MARSHALL ISLANDS</option>
+                      
+                        <option value="MQ">MARTINIQUE</option>
+                      
+                        <option value="MR">MAURITANIA</option>
+                      
+                        <option value="MU">MAURITIUS</option>
+                      
+                        <option value="YT">MAYOTTE</option>
+                      
+                        <option value="MX">MEXICO</option>
+                      
+                        <option value="FM">MICRONESIA</option>
+                      
+                        <option value="MD">MOLDOVA</option>
+                      
+                        <option value="MC">MONACO</option>
+                      
+                        <option value="MN">MONGOLIA</option>
+                      
+                        <option value="ME">MONTENEGRO</option>
+                      
+                        <option value="MS">MONTSERRAT</option>
+                      
+                        <option value="MA">MOROCCO</option>
+                      
+                        <option value="MZ">MOZAMBIQUE</option>
+                      
+                        <option value="MM">MYANMAR</option>
+                      
+                        <option value="NA">NAMIBIA</option>
+                      
+                        <option value="NR">NAURU</option>
+                      
+                        <option value="NP">NEPAL</option>
+                      
+                        <option value="NL">NETHERLANDS</option>
+                      
+                        <option value="NC">NEW CALEDONIA</option>
+                      
+                        <option value="NZ">NEW ZEALAND</option>
+                      
+                        <option value="NI">NICARAGUA</option>
+                      
+                        <option value="NE">NIGER</option>
+                      
+                        <option value="NG">NIGERIA</option>
+                      
+                        <option value="NU">NIUE</option>
+                      
+                        <option value="NF">NORFOLK ISLAND</option>
+                      
+                        <option value="MP">NORTHERN MARIANA ISLANDS</option>
+                      
+                        <option value="NO">NORWAY</option>
+                      
+                        <option value="OM">OMAN</option>
+                      
+                        <option value="PK">PAKISTAN</option>
+                      
+                        <option value="PW">PALAU</option>
+                      
+                        <option value="PS">PALESTINE,STATE OF</option>
+                      
+                        <option value="PA">PANAMA</option>
+                      
+                        <option value="PG">PAPUA NEW GUINEA</option>
+                      
+                        <option value="PY">PARAGUAY</option>
+                      
+                        <option value="PE">PERU</option>
+                      
+                        <option value="PH">PHILIPPINES</option>
+                      
+                        <option value="PN">PITCAIRN</option>
+                      
+                        <option value="PL">POLAND</option>
+                      
+                        <option value="PT">PORTUGAL</option>
+                      
+                        <option value="PR">PUERTO RICO</option>
+                      
+                        <option value="QA">QATAR</option>
+                      
+                        <option value="RE">REUNION</option>
+                      
+                        <option value="RO">ROMANIA</option>
+                      
+                        <option value="RU">RUSSIAN FEDERATION</option>
+                      
+                        <option value="RW">RWANDA</option>
+                      
+                        <option value="BL">SAINT BARTHELEMY</option>
+                      
+                        <option value="SH">SAINT HELENA</option>
+                      
+                        <option value="KN">SAINT KITTS AND NEVIS</option>
+                      
+                        <option value="LC">SAINT LUCIA</option>
+                      
+                        <option value="MF">SAINT MARTIN</option>
+                      
+                        <option value="PM">SAINT PIERRE AND MIQUELON</option>
+                      
+                        <option value="VC">SAINT VINCENT AND THE GRENADINES</option>
+                      
+                        <option value="WS">SAMOA</option>
+                      
+                        <option value="SM">SAN MARINO</option>
+                      
+                        <option value="ST">SAO TOME AND PRINCIPE</option>
+                      
+                        <option value="SA">SAUDI ARABIA</option>
+                      
+                        <option value="SN">SENEGAL</option>
+                      
+                        <option value="RS">SERBIA</option>
+                      
+                        <option value="SC">SEYCHELLES</option>
+                      
+                        <option value="SL">SIERRA LEONE</option>
+                      
+                        <option value="SG">SINGAPORE</option>
+                      
+                        <option value="SX">SINT MAARTEN</option>
+                      
+                        <option value="SK">SLOVAKIA</option>
+                      
+                        <option value="SI">SLOVENIA</option>
+                      
+                        <option value="SB">SOLOMON ISLANDS</option>
+                      
+                        <option value="SO">SOMALIA</option>
+                      
+                        <option value="ZA">SOUTH AFRICA</option>
+                      
+                        <option value="GS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</option>
+                      
+                        <option value="SS">SOUTH SUDAN</option>
+                      
+                        <option value="ES">SPAIN</option>
+                      
+                        <option value="LK">SRI LANKA</option>
+                      
+                        <option value="SD">SUDAN</option>
+                      
+                        <option value="SR">SURINAME</option>
+                      
+                        <option value="SJ">SVALBARD AND JAN MAYEN</option>
+                      
+                        <option value="SZ">SWAZILAND</option>
+                      
+                        <option value="SE">SWEDEN</option>
+                      
+                        <option value="CH">SWITZERLAND</option>
+                      
+                        <option value="SY">SYRIAN ARAB REPUBLIC</option>
+                      
+                        <option value="TW">TAIWAN</option>
+                      
+                        <option value="TJ">TAJIKISTAN</option>
+                      
+                        <option value="TZ">TANZANIA,UNITED REPUBLIC OF</option>
+                      
+                        <option value="TH">THAILAND</option>
+                      
+                        <option value="TL">TIMOR-LESTE</option>
+                      
+                        <option value="TG">TOGO</option>
+                      
+                        <option value="TK">TOKELAU</option>
+                      
+                        <option value="TO">TONGA</option>
+                      
+                        <option value="TT">TRINIDAD AND TOBAGO</option>
+                      
+                        <option value="TN">TUNISIA</option>
+                      
+                        <option value="TR">TURKEY</option>
+                      
+                        <option value="TM">TURKMENISTAN</option>
+                      
+                        <option value="TC">TURKS AND CAICOS ISLANDS</option>
+                      
+                        <option value="TV">TUVALU</option>
+                      
+                        <option value="UG">UGANDA</option>
+                      
+                        <option value="UA">UKRAINE</option>
+                      
+                        <option value="AE">UNITED ARAB EMIRATES</option>
+                      
+                        <option value="GB">UNITED KINGDOM</option>
+                      
+                        <option value="UM">UNITED STATES MINOR OUTLYING ISLANDS</option>
+                      
+                        <option value="UY">URUGUAY</option>
+                      
+                        <option value="UZ">UZBEKISTAN</option>
+                      
+                        <option value="VU">VANUATU</option>
+                      
+                        <option value="VA">VATICAN CITY STATE</option>
+                      
+                        <option value="VE">VENEZUELA</option>
+                      
+                        <option value="VN">VIET NAM</option>
+                      
+                        <option value="VG">VIRGIN ISLANDS(BRITISH)</option>
+                      
+                        <option value="VI">VIRGIN ISLANDS(U.S.)</option>
+                      
+                        <option value="WF">WALLIS AND FUTUNA</option>
+                      
+                        <option value="EH">WESTERN SAHARA</option>
+                      
+                        <option value="YE">YEMEN</option>
+                      
+                        <option value="ZM">ZAMBIA</option>
+                      
+                        <option value="ZW">ZIMBABWE</option>
+                      
+                    </select>
+                    <div id="iptvreg_error_billing_country" style="display:none"></div>
+                  </div>
+                    </div>
+                  </div>
+                  
+                  <div class="reg-row">
+                    <div class="col-1-ph col-2-tb col-1-dp">
+                      <div class="form-group">
+                        <label class="label hidden-ph" for="iptvreg_field_billing_address1">ADDRESS 1:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <input class="input" value="" placeholder="ADDRESS 1:" id="iptvreg_field_billing_address1" iptvregerrorclass="input validationError" maxlength="40">
+                    <div id="iptvreg_error_billing_address1" style="display:none"></div>
+                      </div>
+                    </div>
+                    <div class="col-1-ph col-2-tb col-1-dp">
+                        <div class="form-group">
+                          <label class="label hidden-ph" for="iptvreg_field_billing_address2">ADDRESS 2: <span class="instruct" style="font-weight:normal">(Optional)</span></label>
+                    <input class="input" value="" placeholder="ADDRESS 2: (Optional)" id="iptvreg_field_billing_address2" iptvregerrorclass="input validationError" maxlength="40">
+                    <div id="iptvreg_error_billing_address2" style="display:none"></div>
+                  </div>
+                    </div>
+                </div>
+                <div class="reg-row">
+                    <div class="col-1-ph col-2-tb col-1-dp">
+                      <div class="form-group">
+                        <label class="label hidden-ph" for="iptvreg_field_billing_city">CITY:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <input class="input" value="" placeholder="CITY:" id="iptvreg_field_billing_city" iptvregerrorclass="input validationError" maxlength="30">
+                    <div id="iptvreg_error_billing_city" style="display:none"></div>
+                      </div>
+                    </div>
+                    <div id="billing_state">
+                      <div class="col-1-ph col-2-tb col-1-dp">
+                          <div class="form-group">
+                          
+                    
+                      <div id="iptvreg_billing_state_US">
+                        <label class="label" for="iptvreg_field_billing_state">State<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <select class="input" id="iptvreg_field_billing_state" iptvregerrorclass="input validationError">
+                          <option value="">Select State</option>
+                          
+                            <option value="AL">Alabama</option>
+                          
+                            <option value="AK">Alaska</option>
+                          
+                            <option value="AS">American Samoa</option>
+                          
+                            <option value="AZ">Arizona</option>
+                          
+                            <option value="AR">Arkansas</option>
+                          
+                            <option value="AA">Armed Forces Americas</option>
+                          
+                            <option value="AE">Armed Forces Europe</option>
+                          
+                            <option value="AP">Armed Forces Pacific</option>
+                          
+                            <option value="CA">California</option>
+                          
+                            <option value="CO">Colorado</option>
+                          
+                            <option value="CT">Connecticut</option>
+                          
+                            <option value="DE">Delaware</option>
+                          
+                            <option value="DC">District of Columbia</option>
+                          
+                            <option value="FM">Federated States of Micronesia</option>
+                          
+                            <option value="FL">Florida</option>
+                          
+                            <option value="GA">Georgia</option>
+                          
+                            <option value="GU">Guam</option>
+                          
+                            <option value="HI">Hawaii</option>
+                          
+                            <option value="ID">Idaho</option>
+                          
+                            <option value="IL">Illinois</option>
+                          
+                            <option value="IN">Indiana</option>
+                          
+                            <option value="IA">Iowa</option>
+                          
+                            <option value="KS">Kansas</option>
+                          
+                            <option value="KY">Kentucky</option>
+                          
+                            <option value="LA">Louisiana</option>
+                          
+                            <option value="ME">Maine</option>
+                          
+                            <option value="MH">Marshall Islands</option>
+                          
+                            <option value="MD">Maryland</option>
+                          
+                            <option value="MA">Massachusetts</option>
+                          
+                            <option value="MI">Michigan</option>
+                          
+                            <option value="MN">Minnesota</option>
+                          
+                            <option value="MS">Mississippi</option>
+                          
+                            <option value="MO">Missouri</option>
+                          
+                            <option value="MT">Montana</option>
+                          
+                            <option value="NE">Nebraska</option>
+                          
+                            <option value="NV">Nevada</option>
+                          
+                            <option value="NH">New Hampshire</option>
+                          
+                            <option value="NJ">New Jersey</option>
+                          
+                            <option value="NM">New Mexico</option>
+                          
+                            <option value="NY">New York</option>
+                          
+                            <option value="NC">North Carolina</option>
+                          
+                            <option value="ND">North Dakota</option>
+                          
+                            <option value="MP">Northern Mariana Islands</option>
+                          
+                            <option value="OH">Ohio</option>
+                          
+                            <option value="OK">Oklahoma</option>
+                          
+                            <option value="OR">Oregon</option>
+                          
+                            <option value="PW">Palau</option>
+                          
+                            <option value="PA">Pennsylvania</option>
+                          
+                            <option value="PR">Puerto Rico</option>
+                          
+                            <option value="RI">Rhode Island</option>
+                          
+                            <option value="SC">South Carolina</option>
+                          
+                            <option value="SD">South Dakota</option>
+                          
+                            <option value="TN">Tennessee</option>
+                          
+                            <option value="TX">Texas</option>
+                          
+                            <option value="UM">United States Minor Outlying Islands</option>
+                          
+                            <option value="UT">Utah</option>
+                          
+                            <option value="VT">Vermont</option>
+                          
+                            <option value="VI">Virgin Islands, U.S.</option>
+                          
+                            <option value="VA">Virginia</option>
+                          
+                            <option value="WA">Washington</option>
+                          
+                            <option value="WV">West Virginia</option>
+                          
+                            <option value="WI">Wisconsin</option>
+                          
+                            <option value="WY">Wyoming</option>
+                          
+                        </select>
+                      </div>
+                      <div id="iptvreg_billing_state_CA" style="display:none">
+                        <label class="label" for="iptvreg_field_billing_state">Province<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <select class="input" id="CA_iptvreg_field_billing_state" iptvregerrorclass="input validationError">
+                          <option value="">Select Province</option>
+                          
+                            <option value="AB">Alberta</option>
+                          
+                            <option value="BC">British Columbia</option>
+                          
+                            <option value="MB">Manitoba</option>
+                          
+                            <option value="NB">New Brunswick</option>
+                          
+                            <option value="NL">Newfoundland and Labrador</option>
+                          
+                            <option value="NT">Northwest Territories</option>
+                          
+                            <option value="NS">Nova Scotia</option>
+                          
+                            <option value="NU">Nunavut</option>
+                          
+                            <option value="ON">Ontario</option>
+                          
+                            <option value="PE">Prince Edward Island</option>
+                          
+                            <option value="QC">Quebec</option>
+                          
+                            <option value="SK">Saskatchewan</option>
+                          
+                            <option value="YT">Yukon Territory</option>
+                          
+                        </select>
+                      </div>
+                          
+                          
+                    
+                      <div id="iptvreg_error_billing_state" style="display:none"></div>
+                    </div>
+                  </div>
+                    </div>
+                </div>
+                
+                <div class="reg-row">
+                    <div class="col-1-ph col-2-tb col-1-dp">
+                      <div class="form-group">
+                        <label class="label hidden-ph" for="iptvreg_field_billing_zip">POSTAL/ZIP CODE:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                        <input class="input" value="" placeholder="POSTAL/ZIP CODE:" id="iptvreg_field_billing_zip" iptvregerrorclass="input validationError" maxlength="10">
+                    <div id="iptvreg_error_billing_zip" style="display:none"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-1-ph col-2-tb col-1-dp" id="iptvreg_phone_container">
+                        <div class="form-group">
+                          <label class="label hidden-ph" for="iptvreg_field_phone">PHONE NUMBER:<span class="required labelErrorDesc">&nbsp;*</span></label>
+                    <input class="input" value="" placeholder="PHONE NUMBER:" id="iptvreg_field_phone" iptvregerrorclass="input validationError" maxlength="20">
+                    <div id="iptvreg_error_phone" style="display:none"></div>
+                  </div>
+                </div>
+                
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="clearfix"></div>
+        <div class="required">
+            <div class="reg-row">
+              <div class="col-1-ph">
+                <div class="center-ph left-tb italic"><span class="labelErrorDesc">*</span>&nbsp;<span class="text">Denotes a required field</span></div>
+              </div>
+            </div>
+          </div>
+      </div>
+     
+     
+     <div class="divider"></div>
+     </div>
+  </div>
+  <!-- common package info on page_0/page_1 and buttons -->
+  <div id="iptvreg_packageArea_container">
+  <!--  common package info -->
+  <div class="packageArea" id="iptvreg_packageArea" style="display:none">
+    <div class="reg-content-width reg-content" style="padding-top:0px;padding-bottom:20px" id="iptvreg_packageInfo">
+      <div class="reg-row">
+          
+            <div class="col-1-ph col-dp5-2" id="iptvreg_fieldgroup_promo">
+              <div class="section-bottom">
+                <div class="package">Have a promotion or a gift? Enter the number:</div>
+                <div class="desc" style="margin-top:10px;margin-bottom:20px"></div>
+                <div style="overflow:hidden;padding-right:0.5em;float:left"><input class="input" style="width:100% !important" id="iptvreg_field_promo" value="10off" placeholder="PROMO CODE:" onkeydown="if (event &amp;&amp; event.keyCode=='13') {_registration.check_promo()}"></div><a href="javascript:_registration.check_promo();" class="btn check small" style="float:left" id="iptvreg_btn_checkpromo">CHECK</a>
+                <div class="clearfix"></div>
+                
+                <div id="iptvreg_error_promo" style="" class="labelValidDesc">The promotion code you've entered is valid!</div>
+              </div>
+            </div>
+          
+          <div class="col-1-ph col-dp5-3">
+            <div class="clearfix hidden-dp"></div>
+            <div id="iptvreg_field_sku">
+              
+              
+              
+                
+                  
+                    
+                      
+                      
+                        <input type="radio" id="iptvreg_chargetype_0" sku="PANNUAL" productid="497" skipbilling="true" skipcreditcard="true" cost="99.00" currency="USD" currencysymbol="USD$" itemname="ANNUAL" checked="true" freetrial="true" style="display:none">
+                        
+                        <div class="package" id="packageName">ANNUAL</div>
+                      
+                    
+                  
+                  
+                  
+                      
+                
+                <!-- <div class="separator"></div> -->
+                
+                <div style="padding-top:10px" id="iptvreg_orig_price"><span id="freetrial_zeroprice"><span class="package">TOTAL:&nbsp;</span><span class="price">USD$0.00</span></span><span id="freetrial_totalprice" style="display:none"><span class="package">TOTAL:&nbsp;</span><span class="price">USD$99.00</span></span></div>
+                <div id="iptvreg_promo_price" style="display:none">
+                  <div class="label" style="padding-top:10px;display:block"><span style="visibility:hidden">TOTAL:</span>&nbsp;<span id="iptvreg_promo_orig_price" style="display: none;"></span></div>
+                  <div class="label"><span>TOTAL:</span>&nbsp;<span id="iptvreg_promo_new_price"></span></div>
+                </div>
+                
+                
+                  <div class="instruct" style="padding-top:5px" id="freetrial_price_disclaimer">Price on October 29, 2018: <span id="iptvreg_freetrial_orig_price" style="display: none;">USD$99.00</span><span id="iptvreg_freetrial_promo_price_container" style=""><span id="iptvreg_freetrial_promo_orig_price"><strike>USD$99.00</strike></span>&nbsp;<span id="iptvreg_freetrial_promo_new_price">USD$89.00</span></span></div>
+                
+                
+                
+                  <div id="freetrial_disclaimer">
+                  <div class="separator"></div>
+                  <div class="instruct">
+                    
+                      
+                      
+                        Try PokerGO today! Your free trial includes unlimited access to all PokerGO Annual Subscription content for 7 days free of charge. Watch via the PokerGO App on your desktop, iOS &amp; Android phone or tablet, and Apple TV &amp; Roku devices. You will not be charged until after the trial period ends, and you may cancel at any time. Purchase available only through major credit cards and the free trial is only available on subscriptions purchased through <a href="https://www.pokergo.com/" target="_blank">www.PokerGO.com</a>. See <a href="https://www.pokergo.com/faq" class="link"> www.FAQ.com</a> for details.
+                      
+                    
+                  </div>
+                  </div>
+                
+                <div class="desc" style="padding-top:20px" id="packageDescription">Enjoy unlimited access to all PokerGO programming including all live events and original programming.</div>
+              
+            
+            
+              <div class="desc" style="padding-top:10px"><a href="javascript:buyGift(true)" class="reg-link">Click here to purchase as a gift</a></div>
+            
+            </div>
+            
+              
+                
+                
+                  <div id="iptvreg_fieldgroup_autorenew">
+                    <div class="instruct paragraph-top">
+                      
+                        
+                        
+                        
+                      
+                    
+                  </div>
+                </div>
+              
+            
+          
+            </div>
+          </div>
+          </div>
+    </div>
+    <!--  end of common package info -->
+    
+    <div class="packageArea" id="iptvreg_page_0_packageArea">
+        <div class="reg-content-width reg-content" style="padding-top:0px">
+          <div class="reg-row">
+            <div class="col-1-ph">
+              <div class="left-tb left-dp center-ph text" id="iptvreg_already_have_account">Already have an account?&nbsp;<a class="reg-link" href="javascript:showSection('current_user');">SIGN IN</a></div>
+              <div class="clearfix visible-ph form-group"></div>
+              <div class="right-tb right-dp">
+                <a href="javascript:linkBack()" class="link-back left-ph">‹ Back</a><span style="padding-right:40px" class="hidden-ph">&nbsp;</span><a class="btn continue right-ph" href="pokerGo_Payment.html" id="iptvreg_btn_register">CONTINUE</a>
+                <div class="clearfix"></div>
+                <div style="padding-top:10px;padding-bottom:20px;display:none" id="iptvreg_registeringuser">
+                <div class="desc"><b>Registering New User</b>&nbsp;&nbsp;Please wait...</div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    
+    <div class="packageArea" style="padding-top:0px;display:none" id="iptvreg_page_1_packageArea">
+      <div class="reg-content-width reg-content" style="padding-top:0">
+        <div class="clearfix"></div>
+        <div class="reg-row" id="form3dsecurecontainer" style="display:none">
+            <div class="col-1-ph col-2-tb right-tb col-dp5-3 right-dp">
+              <form id="form3dsecure" name="form3dsecure" method="post" target="_self">
+                <input id="form3dsecurepa" name="PaReq" type="hidden">
+              <input id="form3dsecuremd" name="MD" type="hidden">
+              <input name="TermUrl" type="hidden" value="https://www.pokergo.com/secure/setpaymentreturn?paytype=3dsecure">
+              </form>
+              <div class="labelErrorDesc paragraph-top" id="iptvreg_note_failed3dsecure">
+                <img id="form3dsecure_cardtype" style="float:right;padding-top:10px;padding-left:15px" path="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/images/">
+                <div>???note_failed3dsecure???</div>
+              </div>
+              <div class="paragraph-top"><a class="btn signup" id="iptvreg_btn_3dsecure" href="javascript:_registration.submit3DSecureForm()">???continue_3dsecure???</a></div>
+            </div>
+        </div>
+          <div class="reg-row">
+            <div class="labelErrorDesc col-1-ph col-2-tb right-tb col-dp5-3 right-dp paragraph-top" style="display:none" id="iptvreg_error_1"></div>
+        </div>
+          <div class="paragraph-top">
+            <div class="reg-row">
+              <div class="col-2-tb col-dp5-2 hidden-ph">
+                <a href="javascript:linkBack()" class="link-back">‹ Back</a>
+              </div>
+              <div class="col-1-ph col-2-tb right-tb col-dp5-3">
+                <div id="iptvreg_error_sku" style="margin-bottom:20px;display:none"></div>
+                <a class="btn signup" id="iptvreg_btn_submit" href="javascript:_registration.processSubmission(1);">PURCHASE</a>
+                
+              </div>
+              <div class="col-1-ph visible-ph paragraph-top">
+                <a href="javascript:linkBack()" class="link-back">‹ Back</a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <!-- end of common package info on page_0/page_1 and buttons -->
+  <div style="display:none" id="iptvreg_subscribinguser">
+    <div class="reg-content-width reg-content">
+      <h1><b>Completing Purchase</b></h1>
+      <div class="desc">Please wait...</div>
+    </div>  
+  </div>
+  
+  
+  <div style="display:none" id="iptvreg_registration_confirmation">
+    <div class="stepsContainer">
+    <div class="reg-content-width steps hidden-ph">
+       <ul class="stepsList">
+        <li class="past">SUBSCRIPTION<span class="purchase-icon"></span></li>
+        <li class="past">ACCOUNT<span class="purchase-icon"></span></li>
+        <li class="past">PAYMENT<span class="purchase-icon"></span></li>
+        <li class="sel">CONFIRMATION</li>
+       </ul>
+    </div>
+    <div class="reg-content-width steps visible-ph">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tbody><tr>
+          <td class="reg-carousel-arrow active" valign="middle"></td>
+          <td width="100%" valign="middle">
+             <div class="text-center">
+                <span class="reg-carousel sel">CONFIRMATION</span>
+              <ol class="reg-carousel-indicators" style="position:relative">
+                  <li class="active"></li>
+                  <li class="active"></li>
+                  <li class="active"></li>
+                  <li class="active"></li>
+                </ol>
+            </div>
+          </td>
+          <td class="reg-carousel-arrow" valign="middle"></td>
+        </tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="reg-content-width reg-content">
+      <div id="iptvreg_registration_confirmation_message">
+        <h1><b>Purchase Confirmation</b></h1>
+        <div id="iptvreg_regconfirm_general_info">
+          <div class="section-top paragraph-bottom" id="iptvreg_regconfirm_thanks">Thank you for your purchase!</div>
+          <div style="padding-bottom:5px;" id="iptvreg_regconfirm_itemname"></div>
+          <div id="iptvreg_regconfirm_section_subtotal" style="display:none;padding-top:10px">
+            <div id="iptvreg_regconfirm_subtotal_container" style="display:none"></div>
+            <div id="iptvreg_regconfirm_tax_container" style="display:none"></div>
+          </div>
+          <div id="iptvreg_regconfirm_total"><span class="package">TOTAL:&nbsp;</span><span id="iptvreg_regconfirm_ordertotaldisplay" class="price"></span></div>
+        </div>
+        <div id="iptvreg_regconfirm_discountmsg" class="labelValidDesc paragraph-top" style="display:none"></div>
+        
+            <div id="iptvreg_regconfirm_fieldgroup_freetrial">
+              
+              
+              
+                <div class="section-top paragraph-bottom instruct">Your free trial will last until 10/28/18, after which you will be charged for <span id="iptvreg_regconfirm_freetrial_disclaimer_price">USD$99.00</span>.<br>Cancel before 10/29/18 and you will not be charged. You can do so by going to your <a href="/account/profile" class="reg-link">Account</a> and selecting "Cancel Subscription"</div>
+              
+              
+            </div>
+        
+        <div class="section-top" id="iptvreg_regconfirm_fieldgroup_order">
+          <h2><b>Order Information</b></h2>
+          <div class="instruct">
+            
+            <div><span>USERNAME:</span>&nbsp;<span id="iptvreg_regconfirm_name"></span></div>
+            <div><span>EMAIL:</span>&nbsp;<span id="iptvreg_regconfirm_username"></span></div>
+            
+            <div><span>Order ID:</span>&nbsp;<span id="iptvreg_regconfirm_orderid"></span></div>
+            <div id="iptvreg_regconfirm_fieldgroup_creditcard">
+              <div id="iptvreg_regconfirm_cardholder_container"><span>CARDHOLDER NAME:</span>&nbsp;<span id="iptvreg_regconfirm_cardholder"></span></div>
+              <div><span>CARD NUMBER:</span>&nbsp;<span id="iptvreg_regconfirm_cardnumber"></span></div>
+              <div><span>EXPIRATION DATE:</span>&nbsp;<span id="iptvreg_regconfirm_cardexp"></span></div>
+            </div>
+            
+          </div>
+        </div>
+        <div id="iptvreg_regconfirm_email_receipt"><div class="section-top paragraph-bottom instruct"></div></div>
+        <div class="section-top"><a href="javascript:linkBack()" class="btn continue" id="iptvreg_btn_confirmback"><span id="confirmBackBtn">‹ Back to PokerGO</span></a></div>
+      </div>
+      <div id="iptvreg_registration_confirmation_additional_info" class="labelErrorDesc section-top section-bottom"></div>
+      <div id="iptvreg_ukdd_mandate" style="display:none">
+        <iframe id="iptvreg_ukdd_mandate_frame"></iframe>
+      </div>
+    </div>
+  </div>
+  <div style="display:none">
+      <input type="checkbox" id="cachebustercb">
+    <span id="msg_iptvauth_activateaccount_confirmation_note">Your account activation request has been sent.</span>
+    <span id="msg_iptvauth_forgotpassword_confirmation_note">Your reset password request has been sent. Please check your email including spam folders for link to reset your password.</span>
+    <span id="msg_iptvauth_invalid_return_code">Invalid return code.</span>
+    <span id="msg_iptvauth_invalid_returned_xml_value">Invalid return XML value.</span>
+    <span id="msg_iptvauth_invalid_username_or_password">Email or password is not valid.</span>
+    <span id="msg_iptvauth_login_disabled">Account is disabled. Please contact customer support or <a href="javascript:_auth.processRequest('activateaccount')">click here</a> to have your activation email sent again.</span>
+    <span id="msg_iptvauth_login_expired">Account is expired.</span>
+    <span id="msg_iptvauth_login_locked">Account is locked. Please contact customer support or <a href="javascript:_auth.showForgotPassword()">click here</a> to reset your password.</span>
+    <span id="msg_iptvauth_login_not_found">Email was not found.</span>
+    <span id="msg_iptvauth_login_not_found_requests">Email was not found.</span>
+    <span id="msg_iptvauth_password_invalid">Password is not valid.</span>
+    <span id="msg_iptvauth_password_required">Password is required.</span>
+    <span id="msg_iptvauth_unlockaccount_confirmation_note">Your unlock account request has been sent.</span>
+    <span id="msg_iptvauth_username_length">Please enter a valid email (eg: user@domain.com).</span>
+    <span id="msg_iptvauth_username_required">Email is required.</span>
+    <span id="msg_additional_info">Additional Information:</span>
+    <span id="msg_dobdate_is_required">Date of birth date is required.</span>
+    <span id="msg_dobmonth_is_required">Date of birth month is required.</span>
+    <span id="msg_dobyear_is_required">Date of birth year is required.</span>
+    <span id="msg_dob_invalid">Please enter a valid Date of Birth.</span>
+    <span id="msg_email_already_exists">Email address is not available. Please use another one or Sign In.</span>
+    <span id="msg_email_confirm_do_not_match">Email address and confirmation do not match.</span>
+    <span id="msg_email_invalid">Please enter a valid email address (ie: user@company.com).</span>
+    <span id="msg_email_max_len">Email address is too long.</span>
+    <span id="msg_failedage">We cannot accept your registration at this time.</span>
+    <span id="msg_failedfreetrial">We noticed that you have previously signed up for a free trial using this account or credit card. Please continue with your PokerGO purchase.</span>
+    <span id="msg_failedgeo">Service is not available in your region.</span>
+    <span id="msg_firstname_required">First name is required.</span>
+    <span id="msg_invalid_return_code">Invalid return code.</span>
+    <span id="msg_invalid_returned_xml_value">Invalid return XML value.</span>
+    <span id="msg_is_available">is available.</span>
+    <span id="msg_lastname_required">Last name is required.</span>
+    <span id="msg_password_confirm_do_not_match">Password and confirmation do not match.</span>
+    <span id="msg_password_invalid">Password is not valid.</span>
+    <span id="msg_password_required">Password is required.</span>
+    <span id="msg_the_username">The email address</span>  
+    <span id="msg_username_already_exists">Email already exists. Please enter another one or Sign In.</span>
+    <span id="msg_username_invalid">Please enter a valid email (eg: user@domain.com).</span>
+    <span id="msg_username_is_not_available">is already in use. Please sign in.</span>
+    <span id="msg_username_length">Please enter a valid email (eg: user@domain.com).</span>
+    <span id="msg_username_required">Email is required.</span>
+    <span id="msg_you_must_accept_terms">You must read and accept Terms of Use and Privacy Policy.</span>
+    <span id="msg_you_must_be_of_age">We cannot accept your registration at this time.</span>
+    <span id="msg_you_must_choose_a_subscription_type">You must choose a package in order to continue.</span>
+    <span id="msg_already_subscribed">You already have purchased this video, event, or subscription. If you need further help with your purchase, please contact customer support.</span>
+    <span id="msg_billing_address_required">Billing address is required.</span>
+    <span id="msg_billing_address1_required">Address Line 1 is required.</span>
+    <span id="msg_billing_address2_invalid">Please enter a valid address.</span>
+    <span id="msg_billing_city_required">City is required.</span>
+    <span id="msg_billing_country_required">Country is required.</span>
+    <span id="msg_billing_state_country_combination_invalid">The State/Country combination is invalid.</span>
+    <span id="msg_billing_state_required">State/Province is required.</span>
+    <span id="msg_billing_zip_invalid_CA">Please enter a valid Postal Code.</span>
+    <span id="msg_billing_zip_invalid_GB">Please enter a valid Postal Code.</span>
+    <span id="msg_billing_zip_invalid_US">Please enter a valid Zip Code.</span>
+    <span id="msg_billing_zip_required">Postal/Zip Code is required.</span>
+    <span id="msg_cardrequired">Credit card is required.</span>
+    <span id="msg_cardunsupported">The supplied credit card is not supported for the currency of the purchase.</span>
+    <span id="msg_cc_expmonth_required">Please enter an Expiration Month for the credit card.</span>
+    <span id="msg_cc_expyear_required">Please enter an Expiration Year for the credit card.</span>
+    <span id="msg_cc_number_required">Card Number is required.</span>
+    <span id="msg_cc_securecode_invalid">Please enter a valid Security Code.</span>
+    <span id="msg_cc_securecode_required">Security Code is required for the credit card.</span>
+    <span id="msg_cc_type_required">Card Type is required.</span>
+    <span id="msg_credit_card_expired">The credit card you entered has expired. Please use another card or contact customer support.</span>
+    <span id="msg_credit_card_invalid">The credit card you entered is invalid. Please use another card or contact customer support.</span>
+    
+    <span id="msg_failedalipayset">We are unable to accept AliPay payments at this time.</span>
+    <span id="msg_failedpayment">*** PLEASE NOTE *** There was an error processing payment using the payment option you supplied. If paying by credit card, please check that the billing address you entered matches the address on your credit card account or use a different credit card and try again. If you need further help with your purchase, please contact customer support.</span>
+    <span id="msg_failedpaypalset">We are unable to accept PayPal payments at this time.</span>
+    
+    
+    
+    <span id="msg_failedproductinvalid">The item to purchase was invalid.</span>
+    <span id="msg_failedproductrequired">An item to purchase is required.</span>
+    <span id="msg_failedpromo">Promotion code was failed.</span>
+      <span id="msg_failedpromonofreetrial">This promo code is not applicable to free trial purchases.</span>
+    <span id="msg_fullname_required">Cardholder Name is required.</span>
+    <span id="msg_fullname_space_required">You must enter first and last name for Cardholder Name.</span>
+    <span id="msg_paytype_required">Payment Type is required.</span>
+    <span id="msg_phone_invalid">Please enter a valid Phone Number (ie:  <a href="tel:123-456-7890">123-456-7890</a>).</span>
+    <span id="msg_phone_invalid_non_us">Please enter a valid international phone number (ie:  CC-AAA-LLLL or CC-LLLL where "CC" is the country code, "AAA" is the area code, and "LLLL" is the local number.)  Please use only numeric characters and the hyphen character, for example:  <a href="tel:44-123-12345678">44-123-12345678</a> or <a href="tel:44-12345678">44-12345678</a>.</span>
+    <span id="msg_phone_required">Phone Number is required.</span>
+    <span id="msg_promo_code_required">Promotion Code is required.</span>
+    <span id="msg_promo_code_invalid">The promotion code you entered is not valid.</span>
+    <span id="msg_promo_code_valid">The promotion code you've entered is valid!</span>
+    <span id="msg_promo_product_invalid">A valid product is required in order to use promotion code.</span>
+    <span id="msg_server_error">Server Error - please contact customer support.</span>
+    
+    <span id="msg_confirm_subtotal">Subtotal:&nbsp;</span>
+    <span id="msg_confirm_discount">&nbsp;includes discount of {0}</span>
+    <span id="msg_confirm_tax">Tax:&nbsp;</span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+
+      </td>
+    </tr>
+    <tr>
+      <td align="center" class="footer reg">
+        <div id="footer">
+          <div id="footerLeft"><a href="https://www.pokergo.com/"><img src="https://neulionms-a.akamaihd.net/mt1/player1/pokergo/site_4/images/menulogo_footer.png" border="0"></a></div>
+          <div id="footerRight"><ul><li><a href="https://www.pokergo.com/privacy" target="_blank">Privacy Policy</a></li><li><a href="https://www.pokergo.com/tos" target="_blank">Terms of Use</a></li><li><a href="https://www.pokergo.com/faq" target="_blank">Help</a></li></ul></div>
+        </div>
+      </td>
+    </tr>
+  </tbody></table>
+  
+  
+  <div id="modalUnder" style="display:none"></div>
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+  
+  
+  
+
+  
+
+
+
+
+
+  
+  
+    <script>
+      if(document.getElementById("iptvreg_field_termsofuse")!=null)
+      {
+        document.getElementById("iptvreg_field_termsofuse").checked = false;
+      }
+    </script>
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  
+    <!-- Adobe Tag Manager -->
+    <script type="text/javascript">_satellite.pageBottom();</script>
+    <!-- End Adobe Tag Manager -->
+    <!-- Google Tag Manager --> 
+    
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-KP8RCP5');</script>
+    
+    <!-- End Google Tag Manager --> 
+    <!-- Google Tag Manager (noscript) -->
+    
+    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP8RCP5"
+      height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+    </noscript>
+    
+    <!-- End Google Tag Manager (noscript) --> 
+    
+    <script>
+      currentSub.freeTrial = currentSub.freeTrial ? currentSub.freeTrial : false;
+      currentSub.nextBillDate = currentSub.nextBillDate ? currentSub.nextBillDate : "";
+      currentSub.accessThrough = currentSub.accessThrough ? currentSub.accessThrough : "";
+      currentSub.cancellable = currentSub.cancellable ? currentSub.cancellable : false;
+      currentSub.autoRenew = currentSub.autoRenew ? currentSub.autoRenew : false;
+      currentSub.name = currentSub.name ? currentSub.name : "";
+      currentSub.sku = currentSub.sku ? currentSub.sku : "";
+      if(isSubscriber)
+      {
+        dataLayer[0].user.freeTrial = currentSub.freeTrial;
+        dataLayer[0].user.nextBillDate = currentSub.nextBillDate;
+        dataLayer[0].user.accessThrough = currentSub.accessThrough;
+        dataLayer[0].user.cancellable = currentSub.cancellable;
+        dataLayer[0].user.autoRenew = currentSub.autoRenew;
+        dataLayer[0].user.name = currentSub.name;
+        dataLayer[0].user.sku = currentSub.sku;
+      }
+    </script>
+  
+
+
+<iframe src="https://a8507201684.cdn.optimizely.com/client_storage/a8507201684.html" hidden="" aria-hidden="true" tabindex="-1" height="0" width="0" style="display: none;"></iframe><script type="text/javascript" id="">$(document).ready(function(){-1!=window.location.hash.indexOf("#iptvauth_page_login")&&showSignIn()});</script><script type="text/javascript" id="">0<=window.location.search.indexOf("free-preview-modal")&&showFreeSample();</script><script type="text/javascript" id="">$(document).ready(function(){-1!=window.location.hash.indexOf("#current_user")&&showSection("current_user")});</script>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","105467133339456");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=105467133339456&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","105467133339456");fbq("track","PageView");fbq("track","InitiateCheckout");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=105467133339456&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<script type="text/javascript" id="">(function(g,e,a,f,b,c,d){b.ire_o=a;b[a]=b[a]||function(){(b[a].a=b[a].a||[]).push(arguments)};c=f.createElement(e);d=f.getElementsByTagName(e)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})("//d.impactradius-event.com/A396363-8435-4e7a-a729-9da1db1fda2b1.js","script","ire",document,window);</script>
+<script type="text/javascript" id="">ire("identify",{customerId:"undefined",customerEmail:""});</script><script type="text/javascript" id="">updateTrialBtnText("friendBy","EARN $20");</script><script type="text/javascript" id="">var m=document.createElement("meta");m.name='\x3cmeta name\x3d"google-site-verification';m.content="SPGqpKWLAD6EAljM1CF3EmZoC1lb0bCwOb6ox-oLSo";document.head.appendChild(m);</script><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.15442283254282385"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.27551995990221856" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5661135&amp;Ver=2&amp;mid=665827b7-517b-9d74-eaa0-753eaaa9f7bd&amp;pi=0&amp;lg=en-US&amp;sw=375&amp;sh=812&amp;sc=32&amp;tl=PokerGO&amp;r=https%3A%2F%2Fget.pokergo.com%2F&amp;p=https%3A%2F%2Fwww.pokergo.com%2Fsecure%2Fsubscription%3Fsignup%3Dtrue%26sku%3DPANNUAL%26code%3D10off%26&amp;lt=1372&amp;evt=pageLoad&amp;msclkid=N&amp;rn=451251"></div><script src="https://analytics.twitter.com/i/adsct?p_id=Twitter&amp;p_user_id=0&amp;txn_id=nxlwx&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Fwww.pokergo.com%2Fsecure%2Fsubscription%3Fsignup%3Dtrue%26sku%3DPANNUAL%26code%3D10off%26" type="text/javascript"></script></body></html>
