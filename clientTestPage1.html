@@ -50,13 +50,12 @@
     </script>
   
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    window.onload = function(){
         document.getElementById("anthonyButton").addEventListener('click',function (){
             alert("hello");
 		mParticle.logEvent('User Sign Up', mParticle.EventType.Other,
                     {'Status':'Success','First Name':document.getElementById("iptvreg_field_firstname").value, 'Last Name':document.getElementById("iptvreg_field_lastname").value, 'email':document.getElementById("iptvreg_field_username").value, 'Password Set':'yes'});
 		};
-        //validation code to see State field is mandatory.  
         }  ); 
     });
     </script>
