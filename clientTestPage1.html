@@ -52,11 +52,27 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("anthonyButton").addEventListener('click',function (){
-            alert("hello");
             mParticle.logPageView("Page View", {'Page URL': window.document.URL}, {});
             mParticle.logEvent('User Sign Up', mParticle.EventType.Other,
                     {'Status':'Success','First Name':document.getElementById("iptvreg_field_firstname").value, 'Last Name':document.getElementById("iptvreg_field_lastname").value, 'email':document.getElementById("iptvreg_field_username").value, 'Password Set':'yes'});
-        });   
+            var identityRequest = { userIdentities: { email:document.getElementById("iptvreg_field_username").value } };
+            function onLoginResult(result){
+              if (result.httpCode == 200) {
+              //proceed with login
+              //you can access the new/current mpid here
+                var userId = result.body.mpid;
+              } else if (result.httpCode == -1) {
+              //browser has no coverage/HTTP request failed
+              } else if (result.httpCode == 429) {
+              //in rare circumstances, requests will be throttled and need to be retried
+              }
+            }
+            mParticle.Identity.identify(identityRequest, onLoginResult);
+        });
+            document.getElementById("newEvent").addEventListener('click',function (){
+            mParticle.logEvent('User Viewed Content', mParticle.EventType.Other,
+                    {'Content Type':'Video Play','Free Trial':'TRUE','User Agent': navigator.userAgent});
+        });    
     });
     </script>
   
@@ -1940,7 +1956,8 @@
               <div class="left-tb left-dp center-ph text" id="iptvreg_already_have_account">Already have an account?&nbsp;<a class="reg-link" href="javascript:showSection('current_user');">SIGN IN</a></div>
               <div class="clearfix visible-ph form-group"></div>
               <div class="right-tb right-dp">
-                <button id="anthonyButton">CONTINUE</button>
+                <button id="anthonyButton">Sign Up</button>
+                <button id="newEvent">New Event Test</button>
               </div>
               </div>
             </div>
