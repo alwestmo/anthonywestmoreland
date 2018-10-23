@@ -60,16 +60,6 @@
         }  ); 
     });
     </script>
-	
-  //Log User Sign Up Button Click
-    <script>
-    	window.onload = function(){
-           	document.getElementById("anthonyButton").onclick = function () { 
-           		mParticle.logEvent('User Sign Up', mParticle.EventType.Other,
-                    {'Status':'Success','First Name':document.getElementById("iptvreg_field_firstname").value, 'Last Name':document.getElementById("iptvreg_field_lastname").value, 'email':document.getElementById("iptvreg_field_username").value, 'Password Set':'yes'});
-		};
-	};
-	</script>
   
   <script>
     var LOC_SERVER = "https://www.pokergo.com/";
