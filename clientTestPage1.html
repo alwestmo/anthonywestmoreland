@@ -51,8 +51,11 @@
   
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById("iptvreg_field_firstname").addEventListener('click',function (){
+        document.getElementById("iptvreg_btn_register").addEventListener('click',function (){
             alert("hello");
+		mParticle.logEvent('User Sign Up', mParticle.EventType.Other,
+                    {'Status':'Success','First Name':document.getElementById("iptvreg_field_firstname").value, 'Last Name':document.getElementById("iptvreg_field_lastname").value, 'email':document.getElementById("iptvreg_field_username").value, 'Password Set':'yes'});
+		};
         //validation code to see State field is mandatory.  
         }  ); 
     });
