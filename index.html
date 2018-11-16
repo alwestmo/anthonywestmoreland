@@ -63,6 +63,14 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(mp, s);
 })('02b376ec58b1da43921b93b536fa7239');
+	
+	function myIdentityCallback(result) {
+    if (result.httpCode === 200 || result.httpCode === -3) {
+        // httpCode of 200 indicates is a successful identity call
+        // httpCode of -3 indicates there was an active session, so no identity call is made, but the callback is still triggered
+        result.getUser().setUserAttribute('age', 25);
+    }
+};
 </script>
 		<!-- End mParticle Web SDK -->	
 		<title>mParticle SE Test Page</title>
