@@ -35,7 +35,21 @@
      window.mParticle = window.mParticle || {};
      window.mParticle.eCommerce = { Cart: {} };
      window.mParticle.Identity = {};
-     window.mParticle.config = window.mParticle.config || {};
+     window.mParticle.config = window.mParticle.config || {
+    	rq: [],
+    	isDevelopmentMode: true,
+    	identifyRequest: {
+        	userIdentities: { email: 'email@example.com', customerid: '123456' }
+    	},
+    		identityCallback: myIdentityCallback,
+    		useNativeSdk: false,
+    		useCookieStorage: true,
+    		maxProducts: 10,
+    		appVersion: '1.0.0',
+    		sessionTimeout: 60,
+    		customFlags: {'SimpleReach.Title': 'title', 'SimpleReach.Url': 'url'}
+	};
+     };
      window.mParticle.config.rq = [];
      window.mParticle.config.isDevelopmentMode = true;
      window.mParticle.ready = function (f) {
@@ -48,21 +62,7 @@
     mp.src = ('https:' == document.location.protocol ? 'https://jssdkcdns' : 'http://jssdkcdn') + '.mparticle.com/js/v2/' + apiKey + '/mparticle.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(mp, s);
-})('02b376ec58b1da43921b93b536fa7239');
-    window.mParticle.config = {
-    rq: [],
-    isDevelopmentMode: true,
-    identifyRequest: {
-        userIdentities: { email: 'email@example.com', customerid: '123456' }
-    },
-    identityCallback: myIdentityCallback,
-    useNativeSdk: false,
-    useCookieStorage: true,
-    maxProducts: 10,
-    appVersion: '1.0.0',
-    sessionTimeout: 60,
-    customFlags: {'SimpleReach.Title': 'title', 'SimpleReach.Url': 'url'}
-};		
+})('02b376ec58b1da43921b93b536fa7239');		
 	function myIdentityCallback(result) {
     if (result.httpCode === 200 || result.httpCode === -3) {
         // httpCode of 200 indicates is a successful identity call
