@@ -32,6 +32,20 @@
 		<!-- mParticle Web SDK -->
 <script type="text/javascript">
  (function (apiKey) {
+	window.mParticle.config = {
+    rq: [],
+    isDevelopmentMode: true,
+    identifyRequest: {
+        userIdentities: { email: 'email@example.com', customerid: '123456' }
+    },
+    identityCallback: myIdentityCallback,
+    useNativeSdk: false,
+    useCookieStorage: true,
+    maxProducts: 10,
+    appVersion: '1.0.0',
+    sessionTimeout: 60,
+    customFlags: {'SimpleReach.Title': 'title', 'SimpleReach.Url': 'url'}
+};
      window.mParticle = window.mParticle || {};
      window.mParticle.eCommerce = { Cart: {} };
      window.mParticle.Identity = {};
