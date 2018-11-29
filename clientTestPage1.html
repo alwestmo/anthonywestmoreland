@@ -25,31 +25,70 @@
   <script async="" src="https://c.friendbuy.com/site-4d84294b-www.pokergo.com/track.js?campaign_id=&amp;location=https%3A%2F%2Fwww.pokergo.com%2Fsecure%2Fsubscription%3Fsignup%3Dtrue%26sku%3DPANNUAL%26code%3D10off%26&amp;data=%7B%22site%22%3A%22site-4d84294b-www.pokergo.com%22%2C%22widgetServiceSite%22%3A%22https%3A%2F%2Fws.friendbuy.com%22%2C%22client_api_site%22%3A%22https%3A%2F%2Fc.friendbuy.com%22%2C%22campaignId%22%3A%22%22%7D&amp;_fbuy=040a02550908065219535506091905545208190805050719090551080602095203070450"></script><script async="" src="//cdn.friendbuy.com/js/friendbuy-classic.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ecommerce.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//d.impactradius-event.com/A396363-8435-4e7a-a729-9da1db1fda2b1.js"></script><script src="https://connect.facebook.net/signals/config/105467133339456?v=2.8.30&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//dnn506yrbagrg.cloudfront.net/pages/scripts/0031/4491.js?427839"></script><script type="text/javascript" async="" src="https://secure.quantserve.com/quant.js"></script><script type="text/javascript" async="" src="//static.ads-twitter.com/uwt.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script type="text/javascript" async="" src="//bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://rules.quantcount.com/rules-p-_scvbbvKeufB3.js" async=""></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KP8RCP5"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-KP8RCP5"></script><script type="text/javascript" src="https://neulionms-a.akamaihd.net/mt1/player1/base/site/scripts/require.js"></script><script async="" src="//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg/scripts/common.js"></script>
   <script src="https://neulionms-a.akamaihd.net/mt1/player1/base/reg_1/scripts/jquery.min.js"></script>
       <!-- mParticle Init -->
-    <script type="text/javascript">
-      (function (apiKey) {
-          window.mParticle = window.mParticle || {};
-          window.mParticle.eCommerce = { Cart: {} };
+<script type="text/javascript">
+    (function (apiKey) {
+        window.mParticle = window.mParticle || {};
+        window.mParticle.eCommerce = {Cart: {}};
+        window.mParticle.Identity = {};
+        window.mParticle.config = window.mParticle.config || {
+            isDevelopmentMode: true,
+            identifyRequest: {
+                userIdentities: {
+                    customerId: '1423412'
+                }
+            },
+            identityCallback: identityCallback
+	                };
+        window.mParticle.config.rq = [];
+        window.mParticle.ready = function (f) {
+            window.mParticle.config.rq.push(f);
+        };
 
-          window.mParticle.Identity = {};
-          window.mParticle.config = window.mParticle.config || {
-           isDevelopmentMode: true
-         };
-         window.mParticle.config.rq = [];
-          window.mParticle.ready = function (f) {
-              window.mParticle.config.rq.push(f);
-          };
-          function a(o,t){return function(){t&&(o=t+"."+o);var e=Array.prototype.slice.call(arguments);e.unshift(o),window.mParticle.config.rq.push(e)}}var x=["endSession","logError","logEvent","logForm","logLink","logPageView","setSessionAttribute","setAppName","setAppVersion","setOptOut","setPosition","startNewSession","startTrackingLocation","stopTrackingLocation"],y=["setCurrencyCode","logCheckout"],z=["login","logout","modify"];x.forEach(function(o){window.mParticle[o]=a(o)}),y.forEach(function(o){window.mParticle.eCommerce[o]=a(o,"eCommerce")}),z.forEach(function(o){window.mParticle.Identity[o]=a(o,"Identity")});
+        function a(o, t) {
+            return function () {
+                t && (o = t + "." + o);
+                var e = Array.prototype.slice.call(arguments);
+                e.unshift(o), window.mParticle.config.rq.push(e)
+            }
+        }
 
-         var mp = document.createElement('script');
-         mp.type = 'text/javascript';
-         mp.async = true;
-         mp.src = ('https:' == document.location.protocol ? 'https://jssdkcdns' : 'http://jssdkcdn') + '.mparticle.com/js/v2/' + apiKey + '/mparticle.js';
-         var s = document.getElementsByTagName('script')[0];
-         s.parentNode.insertBefore(mp, s);
-      })('02b376ec58b1da43921b93b536fa7239');
-      
-      mParticle.logPageView("Homepage", {"userType": "ANON","userStatus": "sb|0","siteType": "responsive web","pageViewGuid": "a1e95467-d3bf-41d0-8a11-46baf8d08865","brandPlatformId": "cbscom_site_desktop" },);
-    </script>
+        var x = ["endSession", "logError", "logEvent", "logForm", "logLink", "logPageView", "setSessionAttribute", "setAppName", "setAppVersion", "setOptOut", "setPosition", "startNewSession", "startTrackingLocation", "stopTrackingLocation"], y = ["setCurrencyCode", "logCheckout"], z = ["login", "logout", "modify"];
+        x.forEach(function (o) {
+            window.mParticle[o] = a(o)
+        }), y.forEach(function (o) {
+            window.mParticle.eCommerce[o] = a(o, "eCommerce")
+        }), z.forEach(function (o) {
+            window.mParticle.Identity[o] = a(o, "Identity")
+        });
+
+        var mp = document.createElement('script');
+        mp.type = 'text/javascript';
+        mp.async = true;
+        mp.src = ('https:' == document.location.protocol ? 'https://jssdkcdns' : 'http://jssdkcdn') + '.mparticle.com/js/v2/' + apiKey + '/mparticle.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(mp, s);
+    })('f2629495770cc54bab38bf7af007de98');
+
+    window.mParticle.logPageView("Homepage", {
+    "userType": "ANON",
+    "userStatus": "sb|0",
+    "siteType": "responsive web",
+    "pageViewGuid": "b4705ebc-617b-4afd-b3cc-3cb10ee859ed",
+    "brandPlatformId": "cbscom_site_desktop"
+},);
+
+    function identityCallback(result) {
+        if (result.httpCode === 200 || result.httpCode === -3) {
+
+
+            result.getUser().setUserAttribute('userId', );
+            result.getUser().setUserAttribute('userType', null);
+            result.getUser().setUserAttribute('userStatus', null);
+
+
+        }
+    }
+</script>
   
     <script>
     document.addEventListener('DOMContentLoaded', function() {
