@@ -38,9 +38,7 @@
      window.mParticle.config = window.mParticle.config || {
     	rq: [],
     	isDevelopmentMode: true,
-    	identifyRequest: {
-        	userIdentities: { email: 'email@example.com', customerid: '123456' }
-    	},
+    	identifyRequest: {},
     		identityCallback: myIdentityCallback,
     		useNativeSdk: false,
     		useCookieStorage: true,
@@ -61,14 +59,8 @@
     mp.src = ('https:' == document.location.protocol ? 'https://jssdkcdns' : 'http://jssdkcdn') + '.mparticle.com/js/v2/' + apiKey + '/mparticle.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(mp, s);
-})('02b376ec58b1da43921b93b536fa7239');		
-	function myIdentityCallback(result) {
-    if (result.httpCode === 200 || result.httpCode === -3) {
-        // httpCode of 200 indicates is a successful identity call
-        // httpCode of -3 indicates there was an active session, so no identity call is made, but the callback is still triggered
-        result.getUser().setUserAttribute('age', 25);
-    }
-};
+})('');		
+	
 </script>
 		<!-- End mParticle Web SDK -->	
 		<title>mParticle SE Test Page</title>
