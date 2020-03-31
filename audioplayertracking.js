@@ -2,6 +2,7 @@ jQuery(document).ready(function(){
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
     console.log(index);
+    console.log("Looking for this PLAYED event");
   });
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.paused", function(event, index){
