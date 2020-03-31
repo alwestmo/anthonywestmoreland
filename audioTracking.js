@@ -35,12 +35,3 @@ jQuery(document).ready(function(){
     console.log(data.current);
 });
 });
-
-window.mediaSDK.mediaEventListener = function(event) {
-    console.log('Picking up Media Event', event);
-    console.log('Example page event', event.toPageEvent());
-    if (event.name === 'Play') {
-        console.log('mParticle Media SDK fired play event');
-        mediaSDK.logPlay();
-    }
-};
