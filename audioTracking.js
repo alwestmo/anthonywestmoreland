@@ -12,8 +12,8 @@ jQuery(document).ready(function(){
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.paused", function(event, index){
     console.log(index);
     mediaSDK.logPause({
-        currentPlayheadPosition: data.current,
         customAttributes: {
+            currentPlayheadPosition: data.current,
             exampleAttribute: 'I HAZ PAWZ'
         }
     });
