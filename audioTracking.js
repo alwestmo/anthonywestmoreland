@@ -11,6 +11,11 @@ jQuery(document).ready(function(){
     'OnDemand'                    // Stream Type (OnDemand, Live, etc.)
     true                          // Log Page Event Toggle (true/false)
     )
+    mediaSDK.logPlay({
+        customAttributes: {
+            mediaType: 'Audio'
+        }
+    });
 });
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.paused", function(event, index){
