@@ -2,15 +2,6 @@ jQuery(document).ready(function(){
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
     console.log(index);
-    const mediaSession = new MediaSession(
-    mParticle,                    // mParticle SDK Instance
-    '000111',                    // Custom Media ID
-    'Westworld Audio Content',   // Custom Media Title
-    95000,                       // Duration in milliseconds
-    'Audio',                      // Content Type (Video or Audio)
-    'OnDemand'                    // Stream Type (OnDemand, Live, etc.)
-    true                          // Log Page Event Toggle (true/false)
-    )
     mediaSDK.logPlay({
         customAttributes: {
             mediaType: 'Audio'
