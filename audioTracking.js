@@ -11,6 +11,12 @@ jQuery(document).ready(function(){
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.paused", function(event, index){
     console.log(index);
+    mediaSDK.logPause({
+        currentPlayheadPosition: data.current,
+        customAttributes: {
+            exampleAttribute: 'I HAZ PAWZ'
+        }
+    });
 });
 
   jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.stopped", function(event, index){
@@ -35,11 +41,6 @@ window.mediaSDK.mediaEventListener = function(event) {
     console.log('Example page event', event.toPageEvent());
     if (event.name === 'Play') {
         console.log('mParticle Media SDK fired play event');
-
-        var customPageEvent = mediaSDK.createPageEvent('AlternativePlay', {
-            something: 'audio custom'
-        });
-
-        window.mParticle.logBaseEvent(customPageEvent);
+        mediaSDK.logPlay();
     }
 };
