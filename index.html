@@ -14,6 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="audioplayerengine/initaudioplayer-1.css">
 	<script src="audioplayerengine/initaudioplayer-1.js"></script>
 	<!-- End of head section HTML codes -->
+	<!-- Load jQuery for audio tracking -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Load JW Player -->
 	<script src="https://cdn.jwplayer.com/libraries/37y1D93H.js"></script>
 	<!-- Load mParticle Bundle -->
@@ -86,21 +88,17 @@
 						<div class="column"></div>
 					</section> 
 					<section>
-						<div style="margin:12px auto;">
-
-							<!-- Insert to your webpage where you want to display the audio player -->
-							<div id="amazingaudioplayer-1" style="display:block;position:relative;width:100%;max-width:300px;height:auto;margin:0px auto 0px;">
-								<ul class="amazingaudioplayer-audios" style="display:none;">
-									<li data-artist="HBO" data-title="westworldAudio" data-album="HBO_WestWorld" data-info="Westworld Theme" data-image="" data-duration="95">
-										<div class="amazingaudioplayer-source" data-src="audios/westworldAudio.mp3" data-type="audio/mpeg" ></div>
-									</li>
-								</ul>
-								<div class="amazingaudioplayer-engine"><a href="http://amazingaudioplayer.com" title="html5 audio player">music player for website</a></div>
-							</div>
-							<script async defer src="audioplayertracking.js"></script>
-							<!-- End of body section HTML codes -->
+						<!-- Insert to your webpage where you want to display the audio player -->
+						<div id="amazingaudioplayer-1" style="display:block;position:relative;width:100%;max-width:300px;height:auto;margin:0px auto 0px;">
+							<ul class="amazingaudioplayer-audios" style="display:none;">
+								<li data-artist="HBO" data-title="westworldAudio" data-album="HBO_WestWorld" data-info="Westworld Theme" data-image="" data-duration="95">
+									<div class="amazingaudioplayer-source" data-src="audios/westworldAudio.mp3" data-type="audio/mpeg" ></div>
+								</li>
+							</ul>
+							<div class="amazingaudioplayer-engine"><a href="http://amazingaudioplayer.com" title="html5 audio player">music player for website</a></div>
 						</div>
-					</section>   
+						<!-- End of body section HTML codes -->
+					</section>
 					<section class="features section text-center">
 						<div class="container">
 							<div class="features-inner section-inner has-top-divider">
