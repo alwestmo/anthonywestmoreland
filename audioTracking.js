@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-    const mediaSession = new MediaSession(
+    window.mediaSession = new MediaSession(
         mParticle,                    // mParticle SDK Instance
         '1234567',                    // Custom media ID
         'Westworld Audio File',   // Custom media Title
@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
         true,
         true
     );
-    
+
     var sessionStarted = false;
 
     jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
