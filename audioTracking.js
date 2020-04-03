@@ -1,3 +1,5 @@
+import MediaSession from '@mparticle/web-media-sdk';
+
 jQuery(document).ready(function(){
 
     window.mediaSession = new MediaSession(
