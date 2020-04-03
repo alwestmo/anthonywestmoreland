@@ -168,6 +168,6 @@ window.mediaSDK.mediaEventListener = function(event) {
             something: 'custom'
         });
 
-        window.mParticle.logBaseEvent(customPageEvent);
+        //window.mParticle.logBaseEvent(customPageEvent);
     }
 };
