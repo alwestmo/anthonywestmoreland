@@ -1,13 +1,25 @@
 jQuery(document).ready(function(){
+
+    const mediaSession = new MediaSession(
+        mParticle,                    // mParticle SDK Instance
+        '1234567',                    // Custom media ID
+        'Westworld Audio File',   // Custom media Title
+        95000,                       // Duration in milliseconds
+        'Audio',                      // Content Type (Video or Audio)
+        'OnDemand',                    // Stream Type (OnDemand, Live, etc.)
+        true,
+        true
+    );
+    
     var sessionStarted = false;
 
     jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
         console.log(index);
         if (!sessionStarted) {
-            mediaSDK.logSessionStart();
+            mediaSession.logSessionStart();
             sessionStarted = true;
         }
-        mediaSDK.logPlay({
+        mediaSession.logPlay({
             customAttributes: {
                 mediaType: 'Audio'
             }
@@ -16,7 +28,7 @@ jQuery(document).ready(function(){
 
     jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.paused", function(event, index){
         console.log(index);
-        mediaSDK.logPause({
+        mediaSession.logPause({
             customAttributes: {
                 currentPlayheadPosition: data.current,
                 exampleAttribute: 'I HAZ PAWZ'
@@ -40,13 +52,13 @@ jQuery(document).ready(function(){
         console.log(data.current);
     });
 
-    window.mediaSDK.mediaEventListener = function(event) {
+    window.mediaSession.mediaEventListener = function(event) {
         console.log('Picking up Media Event', event);
         console.log('Example page event', event.toPageEvent());
         if (event.name === 'Play') {
             console.log('mParticle Media SDK fired play event');
 
-            var customPageEvent = mediaSDK.createPageEvent('AlternativePlay', {
+            var customPageEvent = mediaSession.createPageEvent('AlternativePlay', {
                 something: 'audio custom event'
             });
 
@@ -54,4 +66,3 @@ jQuery(document).ready(function(){
         }
     };
 });
-
