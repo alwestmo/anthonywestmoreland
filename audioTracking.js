@@ -1,10 +1,8 @@
 jQuery(document).ready(function(){
-    var sessionStarted = false;
 
     jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
         console.log(index);
         mediaSDK.logSessionStart();
-        sessionStarted = true;
         mediaSDK.logPlay({
             customAttributes: {
                 mediaType: 'Audio'
@@ -38,4 +36,3 @@ jQuery(document).ready(function(){
         console.log(data.current);
     });
 });
-
