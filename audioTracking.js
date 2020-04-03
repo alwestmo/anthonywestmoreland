@@ -1,8 +1,12 @@
 jQuery(document).ready(function(){
+    var sessionStarted = false;
 
     jQuery("#amazingaudioplayer-1").bind("amazingaudioplayer.played", function(event, index){
         console.log(index);
-        mediaSDK.logSessionStart();
+        if (!sessionStarted) {
+            mediaSDK.logSessionStart();
+            sessionStarted = true;
+        }
         mediaSDK.logPlay({
             customAttributes: {
                 mediaType: 'Audio'
@@ -36,3 +40,17 @@ jQuery(document).ready(function(){
         console.log(data.current);
     });
 });
+
+window.mediaSDK.mediaEventListener = function(event) {
+    console.log('Picking up Media Event', event);
+    console.log('Example page event', event.toPageEvent());
+    if (event.name === 'Play') {
+        console.log('mParticle Media SDK fired play event');
+
+        var customPageEvent = mediaSDK.createPageEvent('AlternativePlay', {
+            something: 'audio custom event'
+        });
+
+        window.mParticle.logBaseEvent(customPageEvent);
+    }
+};
