@@ -3996,7 +3996,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const mParticleConfig = {
-    isDevelopmentMode: true
+    isDevelopmentMode: true,
+    identifyRequest: {
+      userIdentities: {
+        email: 'anthonyw@bell.com',
+        customerid: 'bell_1234'    
+      }
+    }
 };
 
 var apiKey = '02b376ec58b1da43921b93b536fa7239'; // YOUR API KEY HERE
