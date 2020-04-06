@@ -4005,7 +4005,7 @@ const mParticleConfig = {
     }
 };
 
-var apiKey = '02b376ec58b1da43921b93b536fa7239'; // YOUR API KEY HERE
+var apiKey = 'us1-2997a6db5f71184b988c57c96c29a907'; // YOUR API KEY HERE
 
 _mparticle_web_adobe_client_kit__WEBPACK_IMPORTED_MODULE_2___default.a.register(mParticleConfig);
 
