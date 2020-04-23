@@ -4007,6 +4007,8 @@ const mParticleConfig = {
 
 var apiKey = '02b376ec58b1da43921b93b536fa7239'; // YOUR API KEY HERE
 
+//testing git vs 
+
 _mparticle_web_adobe_client_kit__WEBPACK_IMPORTED_MODULE_2___default.a.register(mParticleConfig);
 
 window.mediaSDK = new _mparticle_web_media_sdk__WEBPACK_IMPORTED_MODULE_1___default.a(
