@@ -4007,9 +4007,6 @@ const mParticleConfig = {
 
 var apiKey = '02b376ec58b1da43921b93b536fa7239'; // YOUR API KEY HERE
 
-//changing multiple lines
-//does this owrk not
-
 _mparticle_web_adobe_client_kit__WEBPACK_IMPORTED_MODULE_2___default.a.register(mParticleConfig);
 
 window.mediaSDK = new _mparticle_web_media_sdk__WEBPACK_IMPORTED_MODULE_1___default.a(
