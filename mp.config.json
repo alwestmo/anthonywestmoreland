@@ -3,5 +3,9 @@
         "workspaceId": "3712",
         "clientId": "uqstM0N4qpcC4E3xqNJGmfBlE3lK8beX",
         "clientSecret": "_aSm1NTLnt_Mp7-t0S6SrGN_g1MJo7l3kNo-Mn8PKjsojn59teDbAaMwtWY7SdeU"
+    },
+    "planningConfig": {
+        "dataPlanVersionFile": "/linting_test-v1.json",  
+        "versionNumber": 2
     }
 }

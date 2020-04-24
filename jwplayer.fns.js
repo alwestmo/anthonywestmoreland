@@ -1,3 +1,7 @@
+import mParticle from "@mparticle/web-sdk"
+
+mParticle.log
+
 // Used to keep track of when the media session actually starts
 var sessionStarted = false;
 

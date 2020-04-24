@@ -3993,8 +3993,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mparticle_web_adobe_client_kit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mparticle_web_adobe_client_kit__WEBPACK_IMPORTED_MODULE_2__);
 
 
-
-
 const mParticleConfig = {
     isDevelopmentMode: true,
     identifyRequest: {
@@ -4004,6 +4002,7 @@ const mParticleConfig = {
       }
     }
 };
+mParticle.logEvent('test', mParticle.EventType.Other);
 
 var apiKey = '02b376ec58b1da43921b93b536fa7239'; // YOUR API KEY HERE
 
