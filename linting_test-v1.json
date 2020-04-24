@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "data_plan_id": "linting_test",
+  "version_description": "",
+  "activated_environment": "production",
+  "created_on": "2020-04-23T21:27:17.873",
+  "created_by": "anthonyw@mparticle.com",
+  "last_modified_on": "2020-04-23T21:30:27.807",
+  "last_modified_by": "anthonyw@mparticle.com",
+  "version_document": {
+    "data_points": [
+      {
+        "description": "Testing Event 1",
+        "match": {
+          "type": "custom_event",
+          "criteria": {
+            "event_name": "Test Event 1",
+            "custom_event_type": "other"
+          }
+        },
+        "validator": {
+          "type": "json_schema",
+          "definition": {
+            "properties": {
+              "data": {
+                "additionalProperties": true,
+                "properties": {
+                  "custom_attributes": {
+                    "additionalProperties": false,
+                    "description": "",
+                    "properties": {
+                      "Test Attr 1": {
+                        "description": "",
+                        "type": "string"
+                      },
+                      "Test Attr 2": {
+                        "description": "",
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "Test Attr 1",
+                      "Test Attr 2"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "custom_attributes"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "active_transformation_ids": null
+      },
+      {
+        "description": "Testing Navigation Event Type 2",
+        "match": {
+          "type": "custom_event",
+          "criteria": {
+            "event_name": "Test Navigation 2",
+            "custom_event_type": "navigation"
+          }
+        },
+        "validator": {
+          "type": "json_schema",
+          "definition": {
+            "properties": {
+              "data": {
+                "additionalProperties": true,
+                "properties": {
+                  "custom_attributes": {
+                    "additionalProperties": false,
+                    "description": "",
+                    "properties": {
+                      "Navigation Page Name": {
+                        "description": "",
+                        "type": "string"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "active_transformation_ids": null
+      },
+      {
+        "description": "User Attributes",
+        "match": {
+          "type": "user_attributes",
+          "criteria": {}
+        },
+        "validator": {
+          "type": "json_schema",
+          "definition": {
+            "additionalProperties": true,
+            "properties": {
+              "User Tier Test": {
+                "description": "",
+                "type": "string"
+              }
+            },
+            "required": []
+          }
+        },
+        "active_transformation_ids": null
+      }
+    ],
+    "transformations": null,
+    "active_transformation_ids": null
+  }
+}
