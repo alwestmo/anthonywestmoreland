@@ -1,1 +1,1 @@
-Anthony Westmoreland Landing Page for mParticle Demo
+Anthony Westmoreland self hosted webpage for testing
