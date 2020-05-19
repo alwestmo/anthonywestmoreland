@@ -1,10 +1,10 @@
-function appendPdf(id, url) {
-    var $el = $('#'+id);
-    // Check whether the browser supports displaying pdf files inline (ie. without downloading them)
-    if (navigator && navigator.mimeTypes && navigator.mimeTypes['application/pdf']) {
-        // You may add extra attributes (eg. to allow transparency) or style the iframe
-        $el.html('<iframe src="'awestmoreland_cv.pdf'"></iframe>');
-    } else {
-        $el.html('<a href="'awestmoreland_cv.pdf'">Download file</a>');
-    }
- }
+<!DOCTYPE html>
+<html lang="en" style="width:100%; height:100%;">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Anthony Westmoreland's Resume</title>
+</head>
+  <body style="width:100%; height:100%; margin:0;">
+    <iframe src="/images/awestmoreland_cv.pdf" style="width:100%; height:100%;" frameborder="0"></iframe>
+  </body>
+</html>
