@@ -1,7 +1,7 @@
 {
   "name": "personalportfolio",
-  "version": "0.1.0",
-  "homepage": "http://www.anthonywestmoreland.com",
+  "version": "1.1.1",
+  "homepage": "http://www.anthonywestmoreland.com/",
   "private": true,
   "dependencies": {
     "anix": "^0.3.3",
