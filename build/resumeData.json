@@ -1,14 +1,14 @@
 {
   "main": {
-    "name":"Anthony Westmoreland Project",
-    "description":"I am a Sales Engineer and I enjoy learning new technologies. This demo project is a site template that can I've used to demonstrate my ability to quickly ramp up on React (a new skill set).",
+    "name":"Anthony's Demo Project",
+    "description":"I am a Sales Engineer and I enjoy learning about new technology and further developing myself. This demo site is demostrates my my ability to quickly ramp up on new skillsets, React in this example.",
     "image":"profilepic.jpg",
     "bio":"I've been a Sales Engineer in the SaaS ecosystem for over 10 years. I enjoy learning new about new technologies, and genuinely enjoy problem solving. In my free time I like to cook, workout, and practice an Ashtanga style yoga.",
     "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
     "email": "westmoreland.anthony@gmail.com",
     "phone": "919-757-1300",
     "github":"https://www.github.com/",
-    "project":"https://www.anthonywestmoreland.com",
+    "project":"https://www.linkedin.com/in/westmorelandanthony/",
     "address":{
       "street":"",
       "city":"New York",
