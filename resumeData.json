@@ -49,60 +49,62 @@
     "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
     "education":[
       {
-        "school":"University?",
-        "degree":"Masters in Beer tasting",
-        "graduated":"April 2007",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
-      },
-      {
-        "school":"School #1 Maybe College?",
-        "degree":"What did you study 101",
-        "graduated":"March 2003",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
+        "school":"North Carolina State University",
+        "degree":"Computer and Electrical Engineering",
+        "graduated":"April 2009",
+        "description":"Varsity Athlete // ROTC 2 Years"
       }
     ],
     "work":[
       {
-        "company":"Awesome Design Studio",
-        "title":"Senior UX God ",
-        "years":"March 2010 - Present",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"mParticle",
+        "title":"Team Lead - Principal Solutions Engineer",
+        "years":"March 2017 - Present",
+        "description":"Top performing Solutions Engineer in 2018 & 2019, closing highest total revenue and volume of new customers. Subset of customers won in 2019 include AMC Networks, Mars, Reverb, and Restaurant Brands International (Burger King, Popeye’s, and Tim Hortons). Reduced onboarding time for new Solutions Engineers over 40% by creating enablement framework that was leveraged for all Technical Services team members and the basis of enabling new Account Executives."
       },
       {
-        "company":"Super Cool Studio",
-        "title":"Junior bug fixer",
-        "years":"March 2007 - February 2010",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Celtra",
+        "title":"Global, Dr Tech Services and Support",
+        "years":"September 2011 - March 2017",
+        "description":"Grew Tech Services team from 3 members to 12 members over 3 years, while reducing ramp time to under 90 days. Analyzed Global Desk support ticket data, identifying trends that evened distribution of workload across team, automated 20% of responses, and maintained an average support ticket lifetime of less than 4 hours."
+      },
+      {
+        "company":"Medialets",
+        "title":"Sales Engineer",
+        "years":"September 2010 - July 2011",
+        "description":""
+      },
+      {
+        "company":"BigMachines",
+        "title":"Engagement/Project Manager",
+        "years":"September 2009 - September 2010",
+        "description":""
       }
     ],
     "skills":[
       {
         "name":"Python",
-        "level":"60%"
-      },
-      {
-        "name":"VueJs",
-        "level":"55%"
-      },
-      {
-        "name":"ReactJs",
         "level":"50%"
       },
       {
-        "name":"CSS",
-        "level":"90%"
+        "name":"Javascript",
+        "level":"75%"
       },
       {
-        "name":"PHP",
+        "name":"HTML",
         "level":"80%"
+      },
+      {
+        "name":"CSS",
+        "level":"40%"
       },
       {
         "name":"Swift",
         "level":"50%"
       },
       {
-        "name":"JAVA",
-        "level":"80%"
+        "name":"React",
+        "level":"25%"
       }
     ]
   },
