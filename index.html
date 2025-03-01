@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Small Business Financial Planner</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DaisyUI CSS (added after Tailwind) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css"
+      rel="stylesheet"
+    />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-base-200">
+    <!-- HERO SECTION -->
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Small Business Financial Planner</h1>
+          <p class="py-6">Plan your production, costs, and profits with ease.</p>
+          <!-- Dark Mode Toggle -->
+          <button id="darkModeToggle" class="btn btn-outline">
+            Toggle Dark Mode
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container mx-auto p-6">
+      <!-- FORM CARD -->
+      <div class="card bg-base-100 shadow-xl p-6 mb-6">
+        <!-- Product Information Section -->
+        <div>
+          <h2 class="card-title">Product Information</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <!-- Selling Price -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Selling Price ($)
+                  <span
+                    class="tooltip"
+                    data-tip="Price at which the product is sold."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="sellingPrice"
+                placeholder="e.g., 20"
+                class="input input-bordered"
+                oninput="recalculateAllCosts()"
+              />
+            </div>
+            <!-- Mold Cost -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Mold Cost ($)
+                  <span
+                    class="tooltip"
+                    data-tip="Mold is paid upfront in Month 1."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="moldCost"
+                placeholder="e.g., 5000"
+                class="input input-bordered"
+              />
+            </div>
+          </div>
+          <!-- Production Run Unit Cost Prices -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Unit Cost Price (First Run) ($)
+                  <span
+                    class="tooltip"
+                    data-tip="Unit cost for the first production run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="unitCostFirst"
+                placeholder="e.g., 10"
+                class="input input-bordered"
+                oninput="recalculateAllCosts()"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Unit Cost Price (Second Run) ($)
+                  <span
+                    class="tooltip"
+                    data-tip="Unit cost for the second production run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="unitCostSecond"
+                placeholder="e.g., 12"
+                class="input input-bordered"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Unit Cost Price (Third Run) ($)
+                  <span
+                    class="tooltip"
+                    data-tip="Unit cost for the third production run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="unitCostThird"
+                placeholder="e.g., 15"
+                class="input input-bordered"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Production Information Section -->
+        <div class="mt-6">
+          <h2 class="card-title">Production Information</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <!-- First Production Volume -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  First Production Volume
+                  <span
+                    class="tooltip"
+                    data-tip="Total units produced in the first run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="firstProdVolume"
+                placeholder="e.g., 1000"
+                class="input input-bordered"
+              />
+            </div>
+            <!-- First Production Run Range (Months) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  First Prod Run Range (Months)
+                  <span
+                    class="tooltip"
+                    data-tip="Duration of the first production run in months for sales."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="firstProdRange"
+                placeholder="e.g., 6"
+                class="input input-bordered"
+              />
+            </div>
+            <!-- Second Production Volume -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Second Production Volume
+                  <span
+                    class="tooltip"
+                    data-tip="Total units produced in the second run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="secondProdVolume"
+                placeholder="e.g., 2000"
+                class="input input-bordered"
+              />
+            </div>
+            <!-- Second Production Run Range (Months) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Second Prod Run Range (Months)
+                  <span
+                    class="tooltip"
+                    data-tip="Duration of the second production run in months for sales."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="secondProdRange"
+                placeholder="e.g., 6"
+                class="input input-bordered"
+              />
+            </div>
+            <!-- Third Production Volume -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Third Production Volume
+                  <span
+                    class="tooltip"
+                    data-tip="Total units produced in the third run."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="thirdProdVolume"
+                placeholder="e.g., 3000"
+                class="input input-bordered"
+              />
+            </div>
+            <!-- Third Production Run Range (Months) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Third Prod Run Range (Months)
+                  <span
+                    class="tooltip"
+                    data-tip="Duration of the third production run in months for sales."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="thirdProdRange"
+                placeholder="e.g., 6"
+                class="input input-bordered"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- LEAD TIMES -->
+        <div class="mt-6">
+          <h2 class="card-title">Lead Times (No Sales Period)</h2>
+          <p class="text-sm text-gray-500">
+            Define how many months pass before each run actually starts selling.
+            This prevents showing revenue in months where product is not yet available.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Lead Time (Months) Before Run #1 Sales
+                  <span
+                    class="tooltip"
+                    data-tip="Months of delay before first run sells."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="leadTimeFirstRun"
+                class="input input-bordered"
+                value="0"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Lead Time (Months) Before Run #2 Sales
+                  <span
+                    class="tooltip"
+                    data-tip="Delay after run #1 ends, before run #2 sells."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="leadTimeSecondRun"
+                class="input input-bordered"
+                value="0"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Lead Time (Months) Before Run #3 Sales
+                  <span
+                    class="tooltip"
+                    data-tip="Delay after run #2 ends, before run #3 sells."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="leadTimeThirdRun"
+                class="input input-bordered"
+                value="0"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Cost Adjustments Section -->
+        <div class="mt-6">
+          <h2 class="card-title">Cost Adjustments</h2>
+          <p class="text-sm text-gray-500">
+            Adjust the percentages or dollar amounts to modify cost components.
+          </p>
+          <div class="grid grid-cols-1 gap-4 mt-4">
+            <!-- Manufacturing Cost (Based on RUN #1 for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Manufacturing Cost (per-unit)
+                  (based on Run #1 for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Manufacturing cost slider/dollar is from first-run base cost; final summary uses each run's cost times this %."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <!-- Slider (percentage) -->
+                <input
+                  type="range"
+                  id="manufacturingCostRange"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="10"
+                  class="range w-44"
+                  oninput="syncCostFromRange('manufacturing')"
+                />
+                <!-- Percentage manual input -->
+                <input
+                  type="number"
+                  id="manufacturingCostPct"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="10"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('manufacturing')"
+                />
+                <span class="text-sm">%</span>
+                <!-- Dollar manual input -->
+                <input
+                  type="number"
+                  id="manufacturingCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('manufacturing')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Overseas Shipping (Based on RUN #1 for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Overseas Shipping (per-unit)
+                  (based on Run #1 for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Overseas shipping cost slider/dollar is from first-run base cost; final summary uses each run's cost times this %."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <!-- Slider (percentage) -->
+                <input
+                  type="range"
+                  id="overseasShippingCostRange"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="5"
+                  class="range w-44"
+                  oninput="syncCostFromRange('overseasShipping')"
+                />
+                <!-- Percentage manual input -->
+                <input
+                  type="number"
+                  id="overseasShippingCostPct"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="5"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('overseasShipping')"
+                />
+                <span class="text-sm">%</span>
+                <!-- Dollar manual input -->
+                <input
+                  type="number"
+                  id="overseasShippingCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('overseasShipping')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Packaging (Based on RUN #1 for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Packaging Cost (per-unit)
+                  (based on Run #1 for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Packaging cost slider/dollar is from first-run base cost; final summary uses each run's cost times this %."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  type="range"
+                  id="packagingCostRange"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="3"
+                  class="range w-44"
+                  oninput="syncCostFromRange('packaging')"
+                />
+                <input
+                  type="number"
+                  id="packagingCostPct"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="3"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('packaging')"
+                />
+                <span class="text-sm">%</span>
+                <input
+                  type="number"
+                  id="packagingCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('packaging')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Inventory Storage (Based on RUN #1 for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Inventory Storage (per-unit)
+                  (based on Run #1 for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Storage cost slider/dollar is from first-run base cost; final summary uses each run's cost times this %."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  type="range"
+                  id="storageCostRange"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="2"
+                  class="range w-44"
+                  oninput="syncCostFromRange('storage')"
+                />
+                <input
+                  type="number"
+                  id="storageCostPct"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="2"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('storage')"
+                />
+                <span class="text-sm">%</span>
+                <input
+                  type="number"
+                  id="storageCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('storage')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Shipping to Customer (Based on SELLING PRICE for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Shipping to Customer (per-unit)
+                  (based on Selling Price for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Percentage/dollar of the selling price for shipping."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  type="range"
+                  id="customerShippingCostRange"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="5"
+                  class="range w-44"
+                  oninput="syncCostFromRange('customerShipping')"
+                />
+                <input
+                  type="number"
+                  id="customerShippingCostPct"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value="5"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('customerShipping')"
+                />
+                <span class="text-sm">%</span>
+                <input
+                  type="number"
+                  id="customerShippingCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('customerShipping')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- US Taxes (Based on SELLING PRICE for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  US Taxes (per-unit)
+                  (based on Selling Price for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Tax cost based on the selling price."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  type="range"
+                  id="taxesCostRange"
+                  min="0"
+                  max="40"
+                  step="0.1"
+                  value="10"
+                  class="range w-44"
+                  oninput="syncCostFromRange('taxes')"
+                />
+                <input
+                  type="number"
+                  id="taxesCostPct"
+                  min="0"
+                  max="40"
+                  step="0.1"
+                  value="10"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('taxes')"
+                />
+                <span class="text-sm">%</span>
+                <input
+                  type="number"
+                  id="taxesCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('taxes')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Payment Processing Fees (Based on SELLING PRICE for slider) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Payment Processing Fees (per-unit)
+                  (based on Selling Price for slider, % applies to all runs)
+                  <span
+                    class="tooltip"
+                    data-tip="Fees for processing payments, based on selling price."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <div class="flex flex-wrap items-center gap-2">
+                <input
+                  type="range"
+                  id="paymentProcessingFeesCostRange"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="2.9"
+                  class="range w-44"
+                  oninput="syncCostFromRange('paymentProcessingFees')"
+                />
+                <input
+                  type="number"
+                  id="paymentProcessingFeesCostPct"
+                  min="0"
+                  max="5"
+                  step="0.1"
+                  value="2.9"
+                  class="input input-bordered w-20"
+                  oninput="syncCostFromPct('paymentProcessingFees')"
+                />
+                <span class="text-sm">%</span>
+                <input
+                  type="number"
+                  id="paymentProcessingFeesCostDollar"
+                  step="0.01"
+                  value="0.00"
+                  class="input input-bordered w-24"
+                  oninput="syncCostFromDollar('paymentProcessingFees')"
+                />
+                <span class="text-sm">$</span>
+              </div>
+            </div>
+
+            <!-- Monthly cost items (simple dollar inputs) -->
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Advertising Costs (Monthly $)
+                  <span
+                    class="tooltip"
+                    data-tip="Monthly advertising expense."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="advertisingCost"
+                step="0.01"
+                value="15"
+                class="input input-bordered"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Return/Refund Costs (Monthly $)
+                  <span
+                    class="tooltip"
+                    data-tip="Monthly returns/refund expense."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="returnCost"
+                step="0.01"
+                value="2"
+                class="input input-bordered"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Platform Fees (Monthly $)
+                  <span
+                    class="tooltip"
+                    data-tip="Monthly e-commerce platform fees."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="platformFees"
+                step="0.01"
+                value="3"
+                class="input input-bordered"
+              />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">
+                  Miscellaneous Overheads (Monthly $)
+                  <span
+                    class="tooltip"
+                    data-tip="Additional monthly expenses."
+                    >(?)</span
+                  >
+                </span>
+              </label>
+              <input
+                type="number"
+                id="overheadCost"
+                step="0.01"
+                value="500"
+                class="input input-bordered"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Loan Information Section -->
+        <div class="mt-6">
+          <h2 class="card-title">Loan Information</h2>
+          <div class="form-control mt-4">
+            <label class="label">
+              <span class="label-text">
+                Loan Amount ($)
+                <span
+                  class="tooltip"
+                  data-tip="Enter the loan amount. This is received in Month 1."
+                  >(?)</span
+                >
+              </span>
+            </label>
+            <input
+              type="number"
+              id="loanAmount"
+              placeholder="e.g., 10000"
+              class="input input-bordered"
+            />
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="mt-6 text-center space-x-4">
+          <button onclick="calculateFinancials()" class="btn btn-primary">
+            Submit
+          </button>
+          <button onclick="window.print()" class="btn btn-secondary">
+            Print
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULTS SECTION -->
+      <div id="resultsSection" class="card bg-base-100 shadow-xl p-6 hidden">
+        <h2 class="card-title mb-4">Financial Analysis</h2>
+        <div id="financialResults">
+          <!-- Financial results get injected here -->
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <!-- Chart 1: Monthly Net Cash Flow (Line Chart) -->
+        <div class="card bg-base-100 shadow-xl p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="card-title mb-2">Monthly Net Cash Flow</h3>
+            <button
+              class="btn btn-sm"
+              onclick="downloadChartAsPNG(window.cashFlowChart, 'cashFlowChart.png')"
+            >
+              Download PNG
+            </button>
+          </div>
+          <canvas id="cashFlowChart"></canvas>
+        </div>
+        <!-- Chart 2: Monthly Profit (Bar Chart) -->
+        <div class="card bg-base-100 shadow-xl p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="card-title mb-2">Monthly Profit (P&L Perspective)</h3>
+            <button
+              class="btn btn-sm"
+              onclick="downloadChartAsPNG(window.profitChart, 'profitChart.png')"
+            >
+              Download PNG
+            </button>
+          </div>
+          <canvas id="profitChart"></canvas>
+        </div>
+        <!-- Chart 3: Cost Breakdown (Pie Chart) -->
+        <div class="card bg-base-100 shadow-xl p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="card-title mb-2">Cost Breakdown (First Run)</h3>
+            <button
+              class="btn btn-sm"
+              onclick="downloadChartAsPNG(window.costBreakdownChart, 'costBreakdown.png')"
+            >
+              Download PNG
+            </button>
+          </div>
+          <canvas id="costBreakdownChart"></canvas>
+        </div>
+        <!-- Chart 4: Selling Price Composition (Doughnut Chart) -->
+        <div class="card bg-base-100 shadow-xl p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="card-title mb-2">Selling Price Composition</h3>
+            <button
+              class="btn btn-sm"
+              onclick="downloadChartAsPNG(window.marginChart, 'marginChart.png')"
+            >
+              Download PNG
+            </button>
+          </div>
+          <canvas id="marginChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // Dark Mode Toggle
+      document
+        .getElementById("darkModeToggle")
+        .addEventListener("click", function () {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          document.documentElement.setAttribute(
+            "data-theme",
+            currentTheme === "light" ? "dark" : "light"
+          );
+        });
+
+      //--------------------------------------------------------------------------
+      // FUNCTIONS FOR SYNCING PERCENTAGE ↔ DOLLAR for cost items
+      //--------------------------------------------------------------------------
+      function syncCostFromRange(costType) {
+        const pct = parseFloat(
+          document.getElementById(costType + "CostRange").value
+        ) || 0;
+        document.getElementById(costType + "CostPct").value = pct.toFixed(2);
+
+        // Determine the relevant "base" for slider/dollar display
+        const unitCostFirst =
+          parseFloat(document.getElementById("unitCostFirst").value) || 0;
+        const sellingPrice =
+          parseFloat(document.getElementById("sellingPrice").value) || 0;
+
+        let baseVal = 0;
+        if (
+          costType === "manufacturing" ||
+          costType === "overseasShipping" ||
+          costType === "packaging" ||
+          costType === "storage"
+        ) {
+          baseVal = unitCostFirst;
+        } else {
+          baseVal = sellingPrice;
+        }
+
+        const dollar = (baseVal * (pct / 100)).toFixed(2);
+        document.getElementById(costType + "CostDollar").value = dollar;
+      }
+
+      function syncCostFromPct(costType) {
+        const pct = parseFloat(
+          document.getElementById(costType + "CostPct").value
+        ) || 0;
+        document.getElementById(costType + "CostRange").value = pct.toFixed(2);
+
+        const unitCostFirst =
+          parseFloat(document.getElementById("unitCostFirst").value) || 0;
+        const sellingPrice =
+          parseFloat(document.getElementById("sellingPrice").value) || 0;
+
+        let baseVal = 0;
+        if (
+          costType === "manufacturing" ||
+          costType === "overseasShipping" ||
+          costType === "packaging" ||
+          costType === "storage"
+        ) {
+          baseVal = unitCostFirst;
+        } else {
+          baseVal = sellingPrice;
+        }
+
+        const dollar = (baseVal * (pct / 100)).toFixed(2);
+        document.getElementById(costType + "CostDollar").value = dollar;
+      }
+
+      function syncCostFromDollar(costType) {
+        const dollar = parseFloat(
+          document.getElementById(costType + "CostDollar").value
+        ) || 0;
+
+        const unitCostFirst =
+          parseFloat(document.getElementById("unitCostFirst").value) || 0;
+        const sellingPrice =
+          parseFloat(document.getElementById("sellingPrice").value) || 0;
+
+        let baseVal = 0;
+        if (
+          costType === "manufacturing" ||
+          costType === "overseasShipping" ||
+          costType === "packaging" ||
+          costType === "storage"
+        ) {
+          baseVal = unitCostFirst;
+        } else {
+          baseVal = sellingPrice;
+        }
+
+        let pct = 0;
+        if (baseVal > 0) {
+          pct = (dollar / baseVal) * 100;
+        }
+        document.getElementById(costType + "CostRange").value = pct.toFixed(2);
+        document.getElementById(costType + "CostPct").value = pct.toFixed(2);
+      }
+
+      // Recalc all cost items if unitCostFirst or sellingPrice changes
+      function recalculateAllCosts() {
+        const costTypes = [
+          "manufacturing",
+          "overseasShipping",
+          "packaging",
+          "storage",
+          "customerShipping",
+          "taxes",
+          "paymentProcessingFees",
+        ];
+        costTypes.forEach((ct) => {
+          syncCostFromPct(ct);
+        });
+      }
+
+      // Also recalc when second or third unit cost changes
+      document
+        .getElementById("unitCostSecond")
+        .addEventListener("input", () => recalculateAllCosts());
+      document
+        .getElementById("unitCostThird")
+        .addEventListener("input", () => recalculateAllCosts());
+
+      //--------------------------------------------------------------------------
+      // HELPER: Download table as CSV
+      //--------------------------------------------------------------------------
+      function downloadTableAsCSV(tableId) {
+        const table = document.getElementById(tableId);
+        if (!table) return;
+
+        let csvContent = "";
+        const rows = table.querySelectorAll("tr");
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll("th, td");
+          const rowData = [];
+          cells.forEach((cell) => {
+            let text = cell.innerText.replace(/"/g, '""');
+            text = `"${text}"`; // wrap in quotes
+            rowData.push(text);
+          });
+          csvContent += rowData.join(",") + "\n";
+        });
+
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute(
+          "download",
+          tableId + "_" + new Date().toISOString().slice(0, 10) + ".csv"
+        );
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      //--------------------------------------------------------------------------
+      // HELPER: Download chart as PNG
+      //--------------------------------------------------------------------------
+      function downloadChartAsPNG(chartInstance, filename) {
+        if (!chartInstance) return;
+        const link = document.createElement("a");
+        link.download = filename;
+        link.href = chartInstance.toBase64Image();
+        link.click();
+      }
+
+      //--------------------------------------------------------------------------
+      // MAIN CALCULATION
+      //--------------------------------------------------------------------------
+      function calculateFinancials() {
+        // Refresh cost calculations
+        recalculateAllCosts();
+
+        // Basic inputs
+        const sellingPrice =
+          parseFloat(document.getElementById("sellingPrice").value) || 0;
+        const moldCost =
+          parseFloat(document.getElementById("moldCost").value) || 0;
+        const loanAmount =
+          parseFloat(document.getElementById("loanAmount").value) || 0;
+
+        // Production volumes & ranges
+        const firstProdVolume =
+          parseInt(document.getElementById("firstProdVolume").value) || 0;
+        const firstProdRange =
+          parseInt(document.getElementById("firstProdRange").value) || 1;
+        const secondProdVolume =
+          parseInt(document.getElementById("secondProdVolume").value) || 0;
+        const secondProdRange =
+          parseInt(document.getElementById("secondProdRange").value) || 1;
+        const thirdProdVolume =
+          parseInt(document.getElementById("thirdProdVolume").value) || 0;
+        const thirdProdRange =
+          parseInt(document.getElementById("thirdProdRange").value) || 1;
+
+        // Lead times
+        const leadTimeFirst =
+          parseInt(document.getElementById("leadTimeFirstRun").value) || 0;
+        const leadTimeSecond =
+          parseInt(document.getElementById("leadTimeSecondRun").value) || 0;
+        const leadTimeThird =
+          parseInt(document.getElementById("leadTimeThirdRun").value) || 0;
+
+        // Monthly overhead
+        const advertisingMonthlyCost =
+          parseFloat(document.getElementById("advertisingCost").value) || 0;
+        const returnMonthlyCost =
+          parseFloat(document.getElementById("returnCost").value) || 0;
+        const platformFeesMonthlyCost =
+          parseFloat(document.getElementById("platformFees").value) || 0;
+        const overheadCost =
+          parseFloat(document.getElementById("overheadCost").value) || 0;
+
+        // Unit costs
+        const unitCostFirst =
+          parseFloat(document.getElementById("unitCostFirst").value) || 0;
+        const unitCostSecond =
+          parseFloat(document.getElementById("unitCostSecond").value) || 0;
+        const unitCostThird =
+          parseFloat(document.getElementById("unitCostThird").value) || 0;
+
+        // Percentage-based cost additions
+        const manufacturingPct =
+          parseFloat(document.getElementById("manufacturingCostPct").value) || 0;
+        const overseasShippingPct =
+          parseFloat(document.getElementById("overseasShippingCostPct").value) ||
+          0;
+        const packagingPct =
+          parseFloat(document.getElementById("packagingCostPct").value) || 0;
+        const storagePct =
+          parseFloat(document.getElementById("storageCostPct").value) || 0;
+        const customerShippingPct =
+          parseFloat(
+            document.getElementById("customerShippingCostPct").value
+          ) || 0;
+        const taxesPct =
+          parseFloat(document.getElementById("taxesCostPct").value) || 0;
+        const paymentProcessingPct =
+          parseFloat(
+            document.getElementById("paymentProcessingFeesCostPct").value
+          ) || 0;
+
+        // RUN #1 detailed costs
+        const manufacturingCostFirst = unitCostFirst * (manufacturingPct / 100);
+        const overseasShippingCostFirst =
+          unitCostFirst * (overseasShippingPct / 100);
+        const packagingCostFirst = unitCostFirst * (packagingPct / 100);
+        const storageCostFirst = unitCostFirst * (storagePct / 100);
+
+        // RUN #2 detailed costs
+        const manufacturingCostSecond =
+          unitCostSecond * (manufacturingPct / 100);
+        const overseasShippingCostSecond =
+          unitCostSecond * (overseasShippingPct / 100);
+        const packagingCostSecond = unitCostSecond * (packagingPct / 100);
+        const storageCostSecond = unitCostSecond * (storagePct / 100);
+
+        // RUN #3 detailed costs
+        const manufacturingCostThird = unitCostThird * (manufacturingPct / 100);
+        const overseasShippingCostThird =
+          unitCostThird * (overseasShippingPct / 100);
+        const packagingCostThird = unitCostThird * (packagingPct / 100);
+        const storageCostThird = unitCostThird * (storagePct / 100);
+
+        // Selling-price–based
+        const customerShippingCost =
+          sellingPrice * (customerShippingPct / 100);
+        const taxes = sellingPrice * (taxesPct / 100);
+        const paymentProcessingFees =
+          sellingPrice * (paymentProcessingPct / 100);
+
+        // Summaries ignoring mold
+        const totalUnitCostFirst =
+          unitCostFirst +
+          manufacturingCostFirst +
+          overseasShippingCostFirst +
+          packagingCostFirst +
+          storageCostFirst;
+        const totalUnitExpensesFirstRun =
+          totalUnitCostFirst + customerShippingCost + taxes + paymentProcessingFees;
+
+        const totalUnitCostSecond =
+          unitCostSecond +
+          manufacturingCostSecond +
+          overseasShippingCostSecond +
+          packagingCostSecond +
+          storageCostSecond;
+        const totalUnitExpensesSecondRun =
+          totalUnitCostSecond + customerShippingCost + taxes + paymentProcessingFees;
+
+        const totalUnitCostThird =
+          unitCostThird +
+          manufacturingCostThird +
+          overseasShippingCostThird +
+          packagingCostThird +
+          storageCostThird;
+        const totalUnitExpensesThirdRun =
+          totalUnitCostThird + customerShippingCost + taxes + paymentProcessingFees;
+
+        // Mold cost (amortized) only for run #1
+        const moldPerUnitFirst =
+          firstProdVolume > 0 ? moldCost / firstProdVolume : 0;
+        const costInclMoldFirst = totalUnitExpensesFirstRun + moldPerUnitFirst;
+
+        // Per-unit profit
+        const profitPerUnitFirstMold = sellingPrice - costInclMoldFirst;
+        const profitPerUnitSecond = sellingPrice - totalUnitExpensesSecondRun;
+        const profitPerUnitThird = sellingPrice - totalUnitExpensesThirdRun;
+
+        //--------------------------------------------------------------------------
+        // SHIFT PRODUCTION COSTS INTO THE CORRECT LEAD TIME MONTHS
+        //--------------------------------------------------------------------------
+        // run #1 cost in costMonth1, run #2 cost in costMonth2, run #3 cost in costMonth3
+        const startMonth1 = 1 + leadTimeFirst;
+        const endMonth1 = startMonth1 + firstProdRange - 1;
+        const costMonth1 = 1; // always month 1
+
+        const startMonth2 = endMonth1 + leadTimeSecond + 1;
+        const endMonth2 = startMonth2 + secondProdRange - 1;
+        const costMonth2 = endMonth1 + 1; // after run #1 ends
+
+        const startMonth3 = endMonth2 + leadTimeThird + 1;
+        const endMonth3 = startMonth3 + thirdProdRange - 1;
+        const costMonth3 = endMonth2 + 1; // after run #2 ends
+
+        const totalMonths = endMonth3;
+
+        // We'll collect monthly flows
+        let monthlyNetCashFlow = [];
+        let monthlyCumulativeCashFlow = [];
+        let monthlyProfitPnl = [];
+        let monthlyCumulativeProfit = 0;
+        let monthlyExpenseBreakdown = [];
+
+        let breakEvenMonth = -1;
+        let runningCashFlow = 0;
+
+        // Identify run in month m
+        function getRunNumberForMonth(m) {
+          if (m >= startMonth1 && m <= endMonth1) return 1;
+          if (m >= startMonth2 && m <= endMonth2) return 2;
+          if (m >= startMonth3 && m <= endMonth3) return 3;
+          return 0;
+        }
+
+        function unitsSoldInMonth(m) {
+          const run = getRunNumberForMonth(m);
+          if (run === 1) {
+            return firstProdVolume / firstProdRange;
+          }
+          if (run === 2) {
+            return secondProdVolume / secondProdRange;
+          }
+          if (run === 3) {
+            return thirdProdVolume / thirdProdRange;
+          }
+          return 0;
+        }
+
+        for (let i = 1; i <= totalMonths; i++) {
+          const inflow = i === 1 ? loanAmount : 0;
+          const runActive = getRunNumberForMonth(i);
+
+          const unitsThisMonth = unitsSoldInMonth(i);
+          const revenue = unitsThisMonth * sellingPrice;
+
+          const overheadExpenses =
+            advertisingMonthlyCost +
+            returnMonthlyCost +
+            platformFeesMonthlyCost +
+            overheadCost;
+
+          const shippingTaxesFeesPerUnit =
+            customerShippingCost + taxes + paymentProcessingFees;
+          const shippingTaxesProcessing = unitsThisMonth * shippingTaxesFeesPerUnit;
+
+          let productionCostThisMonth = 0;
+          if (i === costMonth1 && firstProdVolume > 0) {
+            productionCostThisMonth =
+              firstProdVolume *
+              (unitCostFirst +
+                manufacturingCostFirst +
+                overseasShippingCostFirst +
+                packagingCostFirst +
+                storageCostFirst);
+          }
+          if (i === costMonth2 && secondProdVolume > 0) {
+            productionCostThisMonth =
+              secondProdVolume *
+              (unitCostSecond +
+                manufacturingCostSecond +
+                overseasShippingCostSecond +
+                packagingCostSecond +
+                storageCostSecond);
+          }
+          if (i === costMonth3 && thirdProdVolume > 0) {
+            productionCostThisMonth =
+              thirdProdVolume *
+              (unitCostThird +
+                manufacturingCostThird +
+                overseasShippingCostThird +
+                packagingCostThird +
+                storageCostThird);
+          }
+
+          const totalExpenses =
+            overheadExpenses + shippingTaxesProcessing + productionCostThisMonth;
+
+          // profit ignoring mold & loan
+          const profitPnl = revenue - totalExpenses;
+          monthlyProfitPnl.push(profitPnl);
+          monthlyCumulativeProfit += profitPnl;
+          if (breakEvenMonth < 0 && monthlyCumulativeProfit >= 0) {
+            breakEvenMonth = i;
+          }
+
+          const moldOutflow = i === 1 ? moldCost : 0;
+          const netCashFlow = inflow + revenue - totalExpenses - moldOutflow;
+          runningCashFlow += netCashFlow;
+
+          monthlyNetCashFlow.push(netCashFlow);
+          monthlyCumulativeCashFlow.push(runningCashFlow);
+
+          monthlyExpenseBreakdown[i - 1] = {
+            overhead: overheadExpenses,
+            shippingTaxesProcessing: shippingTaxesProcessing,
+            productionCost: productionCostThisMonth,
+            total: totalExpenses,
+          };
+        }
+
+        // Summaries
+        const totalRevenue = monthlyNetCashFlow
+          .map((_, idx) => unitsSoldInMonth(idx + 1) * sellingPrice)
+          .reduce((a, b) => a + b, 0);
+
+        const totalExpensesExclMold = monthlyExpenseBreakdown.reduce(
+          (acc, val) => acc + val.total,
+          0
+        );
+        const totalProfitPnl = monthlyProfitPnl.reduce((a, b) => a + b, 0);
+        const finalCumulativeCashFlow =
+          monthlyCumulativeCashFlow[monthlyCumulativeCashFlow.length - 1] || 0;
+
+        //----------------------------------------------------------------------
+        // Build the per-unit cost breakdown table (Rows for each cost item)
+        //----------------------------------------------------------------------
+        // We'll put columns for Run #1, Run #2, Run #3
+        let runCostTableHtml = `
+          <div class="overflow-x-auto mt-4">
+            <table class="table w-full" id="runCostBreakdownTable">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Run #1</th>
+                  <th>Run #2</th>
+                  <th>Run #3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Production Run</td>
+                  <td>Run #1</td>
+                  <td>Run #2</td>
+                  <td>Run #3</td>
+                </tr>
+                <tr>
+                  <td>Production Volume</td>
+                  <td>${firstProdVolume}</td>
+                  <td>${secondProdVolume}</td>
+                  <td>${thirdProdVolume}</td>
+                </tr>
+                <tr>
+                  <td>Base Unit Cost</td>
+                  <td>$${unitCostFirst.toFixed(2)}</td>
+                  <td>$${unitCostSecond.toFixed(2)}</td>
+                  <td>$${unitCostThird.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Manufacturing Cost</td>
+                  <td>$${manufacturingCostFirst.toFixed(2)}</td>
+                  <td>$${manufacturingCostSecond.toFixed(2)}</td>
+                  <td>$${manufacturingCostThird.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Overseas Shipping</td>
+                  <td>$${overseasShippingCostFirst.toFixed(2)}</td>
+                  <td>$${overseasShippingCostSecond.toFixed(2)}</td>
+                  <td>$${overseasShippingCostThird.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Packaging</td>
+                  <td>$${packagingCostFirst.toFixed(2)}</td>
+                  <td>$${packagingCostSecond.toFixed(2)}</td>
+                  <td>$${packagingCostThird.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Storage</td>
+                  <td>$${storageCostFirst.toFixed(2)}</td>
+                  <td>$${storageCostSecond.toFixed(2)}</td>
+                  <td>$${storageCostThird.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Mold Cost (amortized per unit)</td>
+                  <td>$${moldPerUnitFirst.toFixed(2)}</td>
+                  <td>$0.00</td>
+                  <td>$0.00</td>
+                </tr>
+                <tr>
+                  <td>Customer Shipping</td>
+                  <td>$${customerShippingCost.toFixed(2)}</td>
+                  <td>$${customerShippingCost.toFixed(2)}</td>
+                  <td>$${customerShippingCost.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Taxes</td>
+                  <td>$${taxes.toFixed(2)}</td>
+                  <td>$${taxes.toFixed(2)}</td>
+                  <td>$${taxes.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Payment Processing</td>
+                  <td>$${paymentProcessingFees.toFixed(2)}</td>
+                  <td>$${paymentProcessingFees.toFixed(2)}</td>
+                  <td>$${paymentProcessingFees.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Total Unit Expenses (Ignoring Mold)</td>
+                  <td>$${totalUnitExpensesFirstRun.toFixed(2)}</td>
+                  <td>$${totalUnitExpensesSecondRun.toFixed(2)}</td>
+                  <td>$${totalUnitExpensesThirdRun.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Total Unit Expenses (With Mold)</td>
+                  <td>$${costInclMoldFirst.toFixed(2)}</td>
+                  <td>$${totalUnitExpensesSecondRun.toFixed(2)}</td>
+                  <td>$${totalUnitExpensesThirdRun.toFixed(2)}</td>
+                </tr>
+                <tr>
+                  <td>Profit per Unit</td>
+                  <td>
+                    ${
+                      profitPerUnitFirstMold >= 0
+                        ? "$" + profitPerUnitFirstMold.toFixed(2)
+                        : "($" + Math.abs(profitPerUnitFirstMold).toFixed(2) + ")"
+                    }
+                  </td>
+                  <td>
+                    ${
+                      profitPerUnitSecond >= 0
+                        ? "$" + profitPerUnitSecond.toFixed(2)
+                        : "($" + Math.abs(profitPerUnitSecond).toFixed(2) + ")"
+                    }
+                  </td>
+                  <td>
+                    ${
+                      profitPerUnitThird >= 0
+                        ? "$" + profitPerUnitThird.toFixed(2)
+                        : "($" + Math.abs(profitPerUnitThird).toFixed(2) + ")"
+                    }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button
+              class="btn btn-sm mt-3"
+              onclick="downloadTableAsCSV('runCostBreakdownTable')"
+            >
+              Download CSV
+            </button>
+          </div>
+        `;
+
+        //----------------------------------------------------------------------
+        // Monthly Cash Flow Table
+        //----------------------------------------------------------------------
+        let monthlyTableHtml = `
+          <div class="overflow-x-auto mt-6">
+            <table class="table w-full" id="cashFlowTable">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Run #</th>
+                  <th>Units Sold</th>
+                  <th>Price (each)</th>
+                  <th>Revenue</th>
+                  <th>Production Cost (lead time)</th>
+                  <th>Overhead+Ship/Tax/Fees</th>
+                  <th>Net Cash Flow</th>
+                  <th>Cumulative Cash Flow</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        for (let i = 0; i < totalMonths; i++) {
+          const monthIdx = i + 1;
+          const run = getRunNumberForMonth(monthIdx);
+          const uThisMonth = unitsSoldInMonth(monthIdx);
+          const revenueThisMonth = uThisMonth * sellingPrice;
+          const netFlow = monthlyNetCashFlow[i];
+          const cumulFlow = monthlyCumulativeCashFlow[i];
+          const overheadShippingTaxes =
+            monthlyExpenseBreakdown[i].overhead +
+            monthlyExpenseBreakdown[i].shippingTaxesProcessing;
+          const prodCost = monthlyExpenseBreakdown[i].productionCost;
+
+          monthlyTableHtml += `
+            <tr>
+              <td>Month ${monthIdx}</td>
+              <td>${run > 0 ? run : "-"}</td>
+              <td>${uThisMonth.toFixed(0)}</td>
+              <td>$${sellingPrice.toFixed(2)}</td>
+              <td>$${revenueThisMonth.toFixed(2)}</td>
+              <td>$${prodCost.toFixed(2)}</td>
+              <td>$${overheadShippingTaxes.toFixed(2)}</td>
+              <td>$${netFlow.toFixed(2)}</td>
+              <td>$${cumulFlow.toFixed(2)}</td>
+            </tr>
+          `;
+        }
+
+        monthlyTableHtml += `</tbody></table>
+          <button class="btn btn-sm mt-3" onclick="downloadTableAsCSV('cashFlowTable')">
+            Download CSV
+          </button>
+        </div>`;
+
+        //----------------------------------------------------------------------
+        // Monthly Expense Breakdown Table
+        //----------------------------------------------------------------------
+        let expenseTableHtml = `
+          <div class="overflow-x-auto mt-6">
+            <table class="table w-full" id="expenseTable">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Overhead</th>
+                  <th>Ship/Tax/Processing</th>
+                  <th>Production Cost</th>
+                  <th>Total Expenses</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        for (let i = 0; i < totalMonths; i++) {
+          const b = monthlyExpenseBreakdown[i];
+          expenseTableHtml += `
+            <tr>
+              <td>Month ${i + 1}</td>
+              <td>$${b.overhead.toFixed(2)}</td>
+              <td>$${b.shippingTaxesProcessing.toFixed(2)}</td>
+              <td>$${b.productionCost.toFixed(2)}</td>
+              <td>$${b.total.toFixed(2)}</td>
+            </tr>
+          `;
+        }
+
+        expenseTableHtml += `</tbody></table>
+          <button class="btn btn-sm mt-3" onclick="downloadTableAsCSV('expenseTable')">
+            Download CSV
+          </button>
+        </div>`;
+
+        //----------------------------------------------------------------------
+        // Summaries
+        //----------------------------------------------------------------------
+        let summaryHtml = `
+          <h3 class="text-lg font-semibold mt-6">Simplified Summary</h3>
+          <ul class="list-disc pl-5 mt-2">
+            <li>Total Revenue: $${totalRevenue.toFixed(2)}</li>
+            <li>Total Expenses (excluding mold): $${totalExpensesExclMold.toFixed(2)}</li>
+            <li>Mold Cost (paid in Month 1): $${moldCost.toFixed(2)}</li>
+            <li>P&amp;L Profit (ignoring mold): $${totalProfitPnl.toFixed(2)}</li>
+          </ul>
+        `;
+        if (breakEvenMonth > 0) {
+          summaryHtml += `<p class="mt-2">
+            Break-even (on cumulative P&amp;L ignoring mold) is reached in <strong>Month ${breakEvenMonth}</strong>.
+          </p>`;
+        } else {
+          summaryHtml += `<p class="mt-2">
+            We do not break even (on cumulative P&amp;L ignoring mold) in this timeframe.
+          </p>`;
+        }
+        summaryHtml += `<p class="mt-2">
+          Final cumulative cash flow at Month ${totalMonths}: <strong>$${finalCumulativeCashFlow.toFixed(
+          2
+        )}</strong>.
+        </p>`;
+
+        //----------------------------------------------------------------------
+        // Combine everything into the #financialResults container
+        //----------------------------------------------------------------------
+        const combinedHtml = `
+          ${runCostTableHtml}
+          <hr class="my-4" />
+          <h3 class="text-lg font-semibold mt-4">Monthly Cash Flow Breakdown</h3>
+          <p class="text-sm text-gray-500">
+            Mold cost and loan appear in Month 1. Production cost is paid in the lead-time month(s) before sales begin for each run.
+          </p>
+          ${monthlyTableHtml}
+          ${summaryHtml}
+          <h3 class="text-lg font-semibold mt-4">Monthly Expense Breakdown</h3>
+          ${expenseTableHtml}
+        `;
+
+        document.getElementById("financialResults").innerHTML = combinedHtml;
+        document.getElementById("resultsSection").classList.remove("hidden");
+
+        //--------------------------------------------------------------------------
+        // CHARTS
+        //--------------------------------------------------------------------------
+        // 1) Monthly Net Cash Flow
+        const ctx1 = document.getElementById("cashFlowChart").getContext("2d");
+        if (window.cashFlowChart instanceof Chart) {
+          window.cashFlowChart.destroy();
+        }
+        const xLabels = Array.from({ length: totalMonths }, (_, i) => `M${i + 1}`);
+        const netFlowData = monthlyNetCashFlow.map((x) => x.toFixed(2));
+        window.cashFlowChart = new Chart(ctx1, {
+          type: "line",
+          data: {
+            labels: xLabels,
+            datasets: [
+              {
+                label: "Net Cash Flow",
+                data: netFlowData,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "top" },
+            },
+            scales: {
+              x: { title: { display: true, text: "Month" } },
+              y: { title: { display: true, text: "Cash Flow ($)" } },
+            },
+          },
+        });
+
+        // 2) Monthly Profit (Ignoring mold & loan)
+        const ctx2 = document.getElementById("profitChart").getContext("2d");
+        if (window.profitChart instanceof Chart) {
+          window.profitChart.destroy();
+        }
+        const monthlyProfitData = monthlyProfitPnl.map((x) => x.toFixed(2));
+        window.profitChart = new Chart(ctx2, {
+          type: "bar",
+          data: {
+            labels: xLabels,
+            datasets: [
+              {
+                label: "Monthly Profit (Ignoring Mold & Loan)",
+                data: monthlyProfitData,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "top" },
+            },
+            scales: {
+              x: { title: { display: true, text: "Month" } },
+              y: { title: { display: true, text: "Profit ($)" } },
+            },
+          },
+        });
+
+        // 3) Pie: Cost Breakdown (First Run)
+        const ctx3 = document.getElementById("costBreakdownChart").getContext("2d");
+        if (window.costBreakdownChart instanceof Chart) {
+          window.costBreakdownChart.destroy();
+        }
+        const costLabels = [
+          "Base Cost",
+          "Manufacturing",
+          "Overseas Shipping",
+          "Packaging",
+          "Storage",
+          "Customer Shipping",
+          "Taxes",
+          "Payment Processing",
+          "Mold (amort/unit)",
+        ];
+        const costData = [
+          unitCostFirst,
+          manufacturingCostFirst,
+          overseasShippingCostFirst,
+          packagingCostFirst,
+          storageCostFirst,
+          customerShippingCost,
+          taxes,
+          paymentProcessingFees,
+          moldPerUnitFirst,
+        ];
+        window.costBreakdownChart = new Chart(ctx3, {
+          type: "pie",
+          data: {
+            labels: costLabels,
+            datasets: [
+              {
+                data: costData,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const val = parseFloat(context.raw).toFixed(2);
+                    return `${context.label}: $${val}`;
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        // 4) Doughnut: Selling Price vs. Cost (First Run ignoring mold)
+        const ctx4 = document.getElementById("marginChart").getContext("2d");
+        if (window.marginChart instanceof Chart) {
+          window.marginChart.destroy();
+        }
+        const firstRunCostExclMold = totalUnitExpensesFirstRun;
+        const firstRunProfit = sellingPrice - firstRunCostExclMold;
+        const marginLabels =
+          firstRunProfit >= 0 ? ["Cost", "Profit"] : ["Cost", "Loss"];
+        const marginData =
+          firstRunProfit >= 0
+            ? [firstRunCostExclMold, firstRunProfit]
+            : [firstRunCostExclMold, Math.abs(firstRunProfit)];
+        window.marginChart = new Chart(ctx4, {
+          type: "doughnut",
+          data: {
+            labels: marginLabels,
+            datasets: [
+              {
+                data: marginData,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  label: (context) => {
+                    const val = parseFloat(context.raw).toFixed(2);
+                    return `${context.label}: $${val}`;
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
